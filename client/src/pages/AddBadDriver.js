@@ -59,7 +59,7 @@ class AddBadDriver extends React.Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>Add Bad Driver</h1>
+              <h1>Add New</h1>
             </Jumbotron>
             <form>
               <Input
@@ -72,19 +72,19 @@ class AddBadDriver extends React.Component {
                 value={this.state.author}
                 onChange={this.handleInputChange}
                 name="author"
-                placeholder="Author (required)"
+                placeholder="You-tube link (required)"
               />
               <TextArea
                 value={this.state.synopsis}
                 onChange={this.handleInputChange}
                 name="synopsis"
-                placeholder="Synopsis (Optional)"
+                placeholder="About (Optional)"
               />
               <FormBtn
                 disabled={!(this.state.author && this.state.title)}
                 onClick={this.handleFormSubmit}
               >
-                Submit Book
+                Submit 
               </FormBtn>
             </form>
           </Col>

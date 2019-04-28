@@ -90,7 +90,7 @@ class Books extends Component {
           </Col> */}
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h1>Bad Drivers</h1>
+              <h1>Latest additions</h1>
             </Jumbotron>
             {this.state.books.length ? (
               <List>
