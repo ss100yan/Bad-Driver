@@ -97,14 +97,24 @@ class Books extends Component {
                 {this.state.books.map(book => (
                   <ListItem key={book._id}>
                     <Link to={"/books/" + book._id}>
-                    <iframe width="550" height="260"
-src={book.author}>
-</iframe>
+                    <iframe width="550" height="260"src={book.author}></iframe>
+                    
                       <strong>
                         {book.title} by {book.author}
+                        
                       </strong>
            
                     </Link>
+                    <button type="button" class="btn btn-warning">Coments</button>
+                   
+        <button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-thumbs-up"></span> Like
+        </button>
+
+        <button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-thumbs-down"></span> Unlike
+        </button>
+  
                     <DeleteBtn onClick={() => this.deleteBook(book._id)} />
                   </ListItem>
                 ))}
