@@ -105,8 +105,8 @@ class Books extends Component {
                       </strong>
            
                     </Link>
-                    <button type="button" class="btn btn-warning">Coments</button>
-                   
+                    
+                    <br/>
         <button type="button" class="btn btn-default btn-sm">
           <span class="glyphicon glyphicon-thumbs-up"></span> Like
         </button>
@@ -114,7 +114,9 @@ class Books extends Component {
         <button type="button" class="btn btn-default btn-sm">
           <span class="glyphicon glyphicon-thumbs-down"></span> Unlike
         </button>
-  
+        <br/>
+                    {/* <button type="button" class="btn btn-warning"    >Coments</button> */}
+                    <a href={"/books/" + book._id}>Coments</a>
                     <DeleteBtn onClick={() => this.deleteBook(book._id)} />
                   </ListItem>
                 ))}
