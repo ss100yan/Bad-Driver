@@ -22,11 +22,11 @@ class Detail extends Component {
         <Row>
           <Col size="md-12">
             <Jumbotron>
-            <iframe width="650" height="360"src={this.state.book.author}></iframe>
-              <h1>
+            <iframe width="550" height="200"src={this.state.book.author}></iframe>
+              <h4>
                 {this.state.book.title} 
                 {/* by {this.state.book.author} */}
-              </h1>
+              </h4>
             </Jumbotron>
           </Col>
         </Row>

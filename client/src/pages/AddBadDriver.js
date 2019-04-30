@@ -59,7 +59,7 @@ class AddBadDriver extends React.Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>Add New</h1>
+              <h4>Add New</h4>
             </Jumbotron>
             <form>
               <Input
@@ -88,27 +88,7 @@ class AddBadDriver extends React.Component {
               </FormBtn>
             </form>
           </Col>
-          {/* <Col size="md-6 sm-12">
-            <Jumbotron>
-              <h1>Bad Drivers</h1>
-            </Jumbotron>
-            {this.state.books.length ? (
-              <List>
-                {this.state.books.map(book => (
-                  <ListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
-                      <strong>
-                        {book.title} by {book.author}
-                      </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => this.deleteBook(book._id)} />
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
-          </Col> */}
+         
          </Row>
      </Container>
     );
