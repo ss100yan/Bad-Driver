@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import SimpleMap from "../components/Map";
 
 class Books extends Component {
   state = {
@@ -68,8 +69,8 @@ class Books extends Component {
                   <ListItem key={book._id}>
                     <Link to={"/books/" + book._id}>
                     <p>License Plate: CUUF88</p>
-                    <iframe width="550" height="260"src={book.author}></iframe>
-                    
+                    <iframe width="100%" height="260"src={book.author}></iframe>
+                    <div><SimpleMap/></div>
                       <strong>
                         {book.title} by {book.author}
                         
