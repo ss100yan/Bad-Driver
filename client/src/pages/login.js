@@ -36,7 +36,7 @@ class login extends React.Component {
           <Col size="md-6">
           <div id="googleButton"></div>
           <GoogleLogin
-    clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+    clientId="919709182816-ep64esfta7208lf1qmlcrl3aoiftjq63.apps.googleusercontent.com"
     buttonText="Login"
     onSuccess={responseGoogle}
     onFailure={responseGoogle}
