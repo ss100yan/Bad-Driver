@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Books from "./pages/Books";
 import AddBadDriver from "./pages/AddBadDriver";
+import login from "./pages/login";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
@@ -12,6 +13,7 @@ function App() {
       <div>
         <Nav />
         <Switch>
+          <Route exact path="/login" component={login} />
           <Route exact path="/add" component={AddBadDriver} />
           <Route exact path="/" component={Books} />
           <Route exact path="/books" component={Books} />
