@@ -1,33 +1,20 @@
 import React from "react";
-import DeleteBtn from "../components/DeleteBtn";
-import google from "../components/google";
 import GoogleLogin from 'react-google-login';
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
+import { GoogleLogout } from 'react-google-login';
 
-
-
-
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import GoogleLogin from 'react-google-login';
-// // or
-// import { GoogleLogin } from 'react-google-login';
- 
- 
+  
 const responseGoogle = (response) => {
   console.log(response);
 }
  
 
-
-//   document.getElementById('googleButton')
-
 class login extends React.Component {
  
   
-  
-
+   
+   
   render() {
     return (
       <Container fluid>
@@ -42,6 +29,16 @@ class login extends React.Component {
     onFailure={responseGoogle}
     cookiePolicy={'single_host_origin'}
   />
+ <div>
+
+
+ <GoogleLogout
+      buttonText="Logout"
+    //   onLogoutSuccess={logout}
+    >
+    </GoogleLogout>
+ </div>
+
           </Col>
          
          </Row>
