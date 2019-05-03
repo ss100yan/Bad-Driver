@@ -14,6 +14,8 @@ class AddBadDriver extends React.Component {
     author: "",
     synopsis: "",
     plate: "",
+    location1: "",
+    location2:""
   };
 
   componentDidMount() {
@@ -23,7 +25,7 @@ class AddBadDriver extends React.Component {
   loadBooks = () => {
     API.getBooks()
       .then(res =>
-        this.setState({ books: res.data, title: "", author: "", synopsis: "", plate: "" })
+        this.setState({ books: res.data, user: "", title: "", author: "", synopsis: "", plate: "" })
       )
       .catch(err => console.log(err));
   };
@@ -46,9 +48,12 @@ class AddBadDriver extends React.Component {
     if (this.state.title && this.state.author) {
       API.saveBook({
         title: this.state.title,
+        user: this.state.user,
         author: this.state.author,
         synopsis: this.state.synopsis,
-        plate: this.state.plate
+        plate: this.state.plate,
+        location1: this.state.location1,
+        location2: this.state.location2
       })
         .then(res => this.loadBooks())
         .catch(err => console.log(err));
@@ -64,12 +69,12 @@ class AddBadDriver extends React.Component {
               <h4>Add New</h4>
             </Jumbotron>
             <form>
-            {/* <Input
-                value={this.state.title}
+            <Input
+                value={this.state.user}
                 onChange={this.handleInputChange}
-                name="title"
-                placeholder="User (required)"
-              /> */}
+                name="user"
+                placeholder="user"
+              />
               <Input
                 value={this.state.title}
                 onChange={this.handleInputChange}
@@ -87,17 +92,18 @@ class AddBadDriver extends React.Component {
               name="author"
               placeholder="You-tube link (required)"
             />
-                {/* <Input
-                value={this.state.title}
+                <Input
+                value={this.state.location1}
                 onChange={this.handleInputChange}
-                name="title"
+                name="location1"
                 placeholder="Location -longtitude (Optional)"
-              />  <Input
-              value={this.state.title}
+              />  
+              <Input
+              value={this.state.location2}
               onChange={this.handleInputChange}
-              name="title"
+              name="location2"
               placeholder="Location -laditude (Optional)"
-            /> */}
+            />
             
               <TextArea
                 value={this.state.synopsis}

@@ -11,9 +11,12 @@ import LP from "./LP.jpg"
 class Books extends Component {
   state = {
     books: [],
+    user:"",
     title: "",
     author: "",
-    synopsis: ""
+    synopsis: "",
+    location1: "",
+    location2: ""
   };
 
   componentDidMount() {
@@ -23,7 +26,7 @@ class Books extends Component {
   loadBooks = () => {
     API.getBooks()
       .then(res =>
-        this.setState({ books: res.data, title: "", author: "", synopsis: "",plate:"" })
+        this.setState({ books: res.data, user:"", title: "", author: "", synopsis: "",plate:"" })
       )
       .catch(err => console.log(err));
   };
@@ -46,9 +49,12 @@ class Books extends Component {
     if (this.state.title && this.state.author) {
       API.saveBook({
         title: this.state.title,
+        user: this.state.user,
         author: this.state.author,
         synopsis: this.state.synopsis,
-        plate: this.state.plate
+        plate: this.state.plate,
+        location1: this.state.location1,
+        location2: this.state.location2,
       })
         .then(res => this.loadBooks())
         .catch(err => console.log(err));
@@ -69,7 +75,8 @@ class Books extends Component {
                 {this.state.books.map(book => (
                   <ListItem key={book._id}>
                     <Link to={"/books/" + book._id}>
-                    <p>License Plate:<spam style= {{backgroundImage: 'url(' + LP + ')' }}>{book.plate}</spam></p>
+                    <p>added by:<spsm>{book.user}</spsm></p>
+                    <p>License Plate:<spam style={{backgroundImage: 'url(' + LP + ')',  fontSize: 30, margin:20}}>{book.plate}</spam></p>
                     <iframe width="100%" height="260"src={book.author}></iframe>
                     <div><SimpleMap/></div>
                       <strong>
@@ -105,11 +112,11 @@ class Books extends Component {
             </Jumbotron>
             
             <ol>
-              <li style={{backgroundImage: 'url(' + LP + ')',  fontSize: 30, margin:20}}>-----CUU--FFF</li>
-              <li style={{backgroundImage: 'url(' + LP + ')',  fontSize: 30, margin:20}}>-----CUU---FFF</li>
-              <li style={{backgroundImage: 'url(' + LP + ')',  fontSize: 30, margin:20}}>-----CUU---FFF</li>
-              <li style={{backgroundImage: 'url(' + LP + ')',  fontSize: 30, margin:20}}>-----CUU---FFF</li>
-              <li style={{backgroundImage: 'url(' + LP + ')',  fontSize: 30, margin:20}}>-----CUU---FFF</li>
+              <li style={{backgroundImage: 'url(' + LP + ')',  fontSize: 30, margin:20}}>123456789012</li>
+              <li style={{backgroundImage: 'url(' + LP + ')',  fontSize: 30, margin:20}}>123456789012</li>
+              <li style={{backgroundImage: 'url(' + LP + ')',  fontSize: 30, margin:20}}>123456789012</li>
+              <li style={{backgroundImage: 'url(' + LP + ')',  fontSize: 30, margin:20}}>123456789012</li>
+              <li style={{backgroundImage: 'url(' + LP + ')',  fontSize: 30, margin:20}}>123456789012</li>
             </ol>
            
           </Col>

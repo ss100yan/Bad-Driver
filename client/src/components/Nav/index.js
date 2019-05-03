@@ -2,12 +2,9 @@ import React from "react";
 import login from "../../pages/login";
 import GoogleLogin from 'react-google-login';
 import { GoogleLogout } from 'react-google-login';
-function Nav() {
 
-  const responseGoogle = (response) => {
-    console.log(response.profileObj);
-  }
-   
+
+function Nav() {
   return (
     // <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
     //   <a className="navbar-brand" href="/">
@@ -28,31 +25,18 @@ function Nav() {
       <li class="active"><a href="/">Home</a></li>
       <li class="dropdown">
       <a class="" href="/add">Add New<span class="caret"></span></a>
-       
+        <ul class="dropdown-menu">
+        
+          {/* <li><a href="#">Page 1-1</a></li>
+          <li><a href="#">Page 1-2</a></li>
+          <li><a href="#">Page 1-3</a></li> */}
+        </ul>
       </li>
+      {/* <li><a href="#">Page 2</a></li> */}
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li class="dropdown"><a><GoogleLogin
-    clientId= "919709182816-2hg84lnsgi74a4stbp4657ofr7a2keq9.apps.googleusercontent.com"
-
-    // "919709182816-ep64esfta7208lf1qmlcrl3aoiftjq63.apps.googleusercontent.com"
-    buttonText="Login"
-    onSuccess={responseGoogle}
-    onFailure={responseGoogle}
-    
-    cookiePolicy={'single_host_origin'}
-   
-
-  
-  /><span class="caret"></span></a>
-  
-  </li>
-      {/* <li><GoogleLogout
-      buttonText="Logout"
-    //   onLogoutSuccess={logout}
-    >
-    </GoogleLogout></li> */}
-      {/* <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> */}
+      <li><a href="/login"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       
     </ul>
   </div>
