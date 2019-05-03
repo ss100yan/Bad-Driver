@@ -12,7 +12,8 @@ class AddBadDriver extends React.Component {
     books: [],
     title: "",
     author: "",
-    synopsis: ""
+    synopsis: "",
+    plate: "",
   };
 
   componentDidMount() {
@@ -22,7 +23,7 @@ class AddBadDriver extends React.Component {
   loadBooks = () => {
     API.getBooks()
       .then(res =>
-        this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+        this.setState({ books: res.data, title: "", author: "", synopsis: "", plate: "" })
       )
       .catch(err => console.log(err));
   };
@@ -46,7 +47,8 @@ class AddBadDriver extends React.Component {
       API.saveBook({
         title: this.state.title,
         author: this.state.author,
-        synopsis: this.state.synopsis
+        synopsis: this.state.synopsis,
+        plate: this.state.plate
       })
         .then(res => this.loadBooks())
         .catch(err => console.log(err));
@@ -62,18 +64,41 @@ class AddBadDriver extends React.Component {
               <h4>Add New</h4>
             </Jumbotron>
             <form>
+            {/* <Input
+                value={this.state.title}
+                onChange={this.handleInputChange}
+                name="title"
+                placeholder="User (required)"
+              /> */}
               <Input
                 value={this.state.title}
                 onChange={this.handleInputChange}
                 name="title"
                 placeholder="Title (required)"
               />
-              <Input
-                value={this.state.author}
+               <Input
+                value={this.state.plate}
                 onChange={this.handleInputChange}
-                name="author"
-                placeholder="You-tube link (required)"
-              />
+                name="plate"
+                placeholder="Licecse Plate "
+              />  <Input
+              value={this.state.author}
+              onChange={this.handleInputChange}
+              name="author"
+              placeholder="You-tube link (required)"
+            />
+                {/* <Input
+                value={this.state.title}
+                onChange={this.handleInputChange}
+                name="title"
+                placeholder="Location -longtitude (Optional)"
+              />  <Input
+              value={this.state.title}
+              onChange={this.handleInputChange}
+              name="title"
+              placeholder="Location -laditude (Optional)"
+            /> */}
+            
               <TextArea
                 value={this.state.synopsis}
                 onChange={this.handleInputChange}

@@ -7,7 +7,7 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import SimpleMap from "../components/Map";
-
+import LP from "./LP.jpg"
 class Books extends Component {
   state = {
     books: [],
@@ -23,7 +23,7 @@ class Books extends Component {
   loadBooks = () => {
     API.getBooks()
       .then(res =>
-        this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+        this.setState({ books: res.data, title: "", author: "", synopsis: "",plate:"" })
       )
       .catch(err => console.log(err));
   };
@@ -47,7 +47,8 @@ class Books extends Component {
       API.saveBook({
         title: this.state.title,
         author: this.state.author,
-        synopsis: this.state.synopsis
+        synopsis: this.state.synopsis,
+        plate: this.state.plate
       })
         .then(res => this.loadBooks())
         .catch(err => console.log(err));
@@ -68,7 +69,7 @@ class Books extends Component {
                 {this.state.books.map(book => (
                   <ListItem key={book._id}>
                     <Link to={"/books/" + book._id}>
-                    <p>License Plate: CUUF88</p>
+                    <p>License Plate:<spam style= {{backgroundImage: 'url(' + LP + ')' }}>{book.plate}</spam></p>
                     <iframe width="100%" height="260"src={book.author}></iframe>
                     <div><SimpleMap/></div>
                       <strong>
@@ -104,16 +105,11 @@ class Books extends Component {
             </Jumbotron>
             
             <ol>
-              <li>CUUFFF</li>
-              <li>CUUFFF</li>
-              <li>CUUFFF</li>
-              <li>CUUFFF</li>
-              <li>CUUFFF</li>
-              <li>CUUFFF</li>
-              <li>CUUFFF</li>
-              <li>CUUFFF</li>
-              <li>CUUFFF</li>
-              <li>CUUFFF</li>
+              <li style={{backgroundImage: 'url(' + LP + ')',  fontSize: 30, margin:20}}>-----CUU--FFF</li>
+              <li style={{backgroundImage: 'url(' + LP + ')',  fontSize: 30, margin:20}}>-----CUU---FFF</li>
+              <li style={{backgroundImage: 'url(' + LP + ')',  fontSize: 30, margin:20}}>-----CUU---FFF</li>
+              <li style={{backgroundImage: 'url(' + LP + ')',  fontSize: 30, margin:20}}>-----CUU---FFF</li>
+              <li style={{backgroundImage: 'url(' + LP + ')',  fontSize: 30, margin:20}}>-----CUU---FFF</li>
             </ol>
            
           </Col>

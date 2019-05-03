@@ -33,7 +33,7 @@ class Detail extends Component {
         <Row>
           <Col size="md-10 md-offset-1">
             <article>
-              <h1>Synopsis</h1>
+              <h1>Coments</h1>
               <p>
                 {this.state.book.synopsis}
               </p>
@@ -42,7 +42,7 @@ class Detail extends Component {
         </Row>
         <Row>
           <Col size="md-2">
-            <Link to="/">← Back to Authors</Link>
+            <Link to="/">← Back to Main Page</Link>
           </Col>
         </Row>
       </Container>
