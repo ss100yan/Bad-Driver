@@ -85,7 +85,7 @@ class AddBadDriver extends React.Component {
                 value={this.state.plate}
                 onChange={this.handleInputChange}
                 name="plate"
-                placeholder="Licecse Plate "
+                placeholder="License Plate "
               />  <Input
               value={this.state.author}
               onChange={this.handleInputChange}

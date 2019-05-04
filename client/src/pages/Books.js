@@ -112,10 +112,10 @@ class Books extends Component {
             </Jumbotron>
             
             <ol>
-              <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 300 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>123456789012</li>
-              <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 300 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>123456789012</li>
-              <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 300 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>123456789012</li>
-              <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 300 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>123456789012</li>
+              <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 300 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>____456____890__</li>
+              <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 300 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>____456____990__</li>
+              <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 300 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>____456____012__</li>
+              <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 300 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>____456____012__</li>
             </ol>
            
           </Col>
