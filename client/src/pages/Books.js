@@ -76,7 +76,7 @@ class Books extends Component {
                   <ListItem key={book._id}>
                     <Link to={"/books/" + book._id}>
                     <p>added by:<spsm>{book.user}</spsm></p>
-                    <p>License Plate:<spam style={{backgroundImage: 'url(' + LP + ')',  fontSize: 30, margin:20}}>{book.plate}</spam></p>
+                    <p>License Plate:<spam  style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 300 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>{book.plate}</spam></p>
                     <iframe width="100%" height="260"src={book.author}></iframe>
                     <div><SimpleMap/></div>
                       <strong>
@@ -112,11 +112,10 @@ class Books extends Component {
             </Jumbotron>
             
             <ol>
-              <li style={{backgroundImage: 'url(' + LP + ')',  fontSize: 30, margin:20}}>123456789012</li>
-              <li style={{backgroundImage: 'url(' + LP + ')',  fontSize: 30, margin:20}}>123456789012</li>
-              <li style={{backgroundImage: 'url(' + LP + ')',  fontSize: 30, margin:20}}>123456789012</li>
-              <li style={{backgroundImage: 'url(' + LP + ')',  fontSize: 30, margin:20}}>123456789012</li>
-              <li style={{backgroundImage: 'url(' + LP + ')',  fontSize: 30, margin:20}}>123456789012</li>
+              <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 300 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>123456789012</li>
+              <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 300 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>123456789012</li>
+              <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 300 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>123456789012</li>
+              <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 300 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>123456789012</li>
             </ol>
            
           </Col>
