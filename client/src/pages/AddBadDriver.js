@@ -10,12 +10,15 @@ import { Input, TextArea, FormBtn } from "../components/Form";
 class AddBadDriver extends React.Component {
   state = {
     books: [],
+    user: "",
     title: "",
     author: "",
     synopsis: "",
     plate: "",
     location1: "",
-    location2:""
+    location2:"",
+    tumbsup: 0 ,
+    tumbsdown: 0
   };
 
   componentDidMount() {

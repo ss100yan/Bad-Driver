@@ -8,6 +8,10 @@ import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import SimpleMap from "../components/Map";
 import LP from "./LP.jpg"
+import { googleName } from "./login";
+
+
+
 class Books extends Component {
   state = {
     books: [],
@@ -76,7 +80,7 @@ class Books extends Component {
                   <ListItem key={book._id}>
                     <Link to={"/books/" + book._id}>
                     <p>added by:<spsm>{book.user}</spsm></p>
-                    <p>License Plate:<spam  style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 300 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>{book.plate}</spam></p>
+                    <p>License Plate:<spam  >{book.plate}</spam></p>
                     <iframe width="100%" height="260"src={book.author}></iframe>
                     <div><SimpleMap/></div>
                       <strong>
@@ -88,11 +92,11 @@ class Books extends Component {
                     
                     <br/>
         <button type="button" class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-thumbs-up"></span> Like
+          <span class="glyphicon glyphicon-thumbs-up"></span>{book.thumsup}
         </button>
 
         <button type="button" class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-thumbs-down"></span> Unlike
+          <span class="glyphicon glyphicon-thumbs-down"></span>{book.thumsdown}
         </button>
         <br/>
                     {/* <button type="button" class="btn btn-warning"    >Coments</button> */}
@@ -108,7 +112,9 @@ class Books extends Component {
           <Col size="md-1"></Col>
            <Col size="md-3">
             <Jumbotron>
-              <h5>The worst in May</h5>
+              <h5>The worst in May 
+                
+              </h5>
             </Jumbotron>
             
             <ol>

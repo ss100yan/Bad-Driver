@@ -5,8 +5,10 @@ import { Col, Row, Container } from "../components/Grid";
 import { GoogleLogout } from 'react-google-login';
 
   
- const responseGoogle = (response) => {
+ export const responseGoogle = (response) => {
   console.log(response.profileObj);
+  const googleName = response.profileObj.name;
+  console.log(googleName);
 }
  
 
@@ -28,6 +30,7 @@ class login extends React.Component {
 
     // "919709182816-ep64esfta7208lf1qmlcrl3aoiftjq63.apps.googleusercontent.com"
     buttonText="Login"
+    onSuccess={console.log("test")}
     onSuccess={responseGoogle}
     onFailure={responseGoogle}
     

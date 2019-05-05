@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
+import { Input, TextArea, FormBtn } from "../components/Form";
 
 class Detail extends Component {
   state = {
@@ -31,13 +32,33 @@ class Detail extends Component {
           </Col>
         </Row>
         <Row>
-          <Col size="md-10 md-offset-1">
+          <Col size="md-6 md-offset-1">
             <article>
               <h1>Coments</h1>
               <p>
                 {this.state.book.synopsis}
               </p>
             </article>
+            <Input
+              value={this.state.location2}
+              onChange={this.handleInputChange}
+              name="user"
+              placeholder="user"
+            />
+            <form>
+              <TextArea
+                value={this.state.synopsis}
+                onChange={this.handleInputChange}
+                name="synopsis"
+                placeholder="Comment"
+              />
+              <FormBtn
+                disabled={!(this.state.author && this.state.title)}
+                onClick={this.handleFormSubmit}
+              >
+                Submit 
+              </FormBtn>
+            </form>
           </Col>
         </Row>
         <Row>
