@@ -11,8 +11,8 @@ const bookSchema = new Schema({
   location2: String,
   addres:String,
   photo:String,
-  tumbsup:String,
-  tumbsdown: String,
+  thumbsup:String,
+  thumbsdown: String,
   comments:String,
   date: { type: Date, default: Date.now }
 });

@@ -15,10 +15,10 @@ class AddBadDriver extends React.Component {
     author: "",
     synopsis: "",
     plate: "",
-    location1: "",
-    location2:"",
-    tumbsup: 0 ,
-    tumbsdown: 0
+    location1: "25.761681",
+    location2:"-80.191788",
+    thumbsup: "0",
+    thumbsdown: "0"
   };
 
   componentDidMount() {
@@ -28,7 +28,9 @@ class AddBadDriver extends React.Component {
   loadBooks = () => {
     API.getBooks()
       .then(res =>
-        this.setState({ books: res.data, user: "", title: "", author: "", synopsis: "", plate: "" })
+        this.setState({ books: res.data, user: "", title: "", author: "", synopsis: "", plate: "", location1: "25.761681",
+        location2:"-80.191788",  thumbsup: "0",
+        thumbsdown: "0"})
       )
       .catch(err => console.log(err));
   };
@@ -56,7 +58,9 @@ class AddBadDriver extends React.Component {
         synopsis: this.state.synopsis,
         plate: this.state.plate,
         location1: this.state.location1,
-        location2: this.state.location2
+        location2: this.state.location2,
+        thumbsup: this.state.thumbsup,
+        thumbsdown: this.state.thumbsdown,
       })
         .then(res => this.loadBooks())
         .catch(err => console.log(err));
@@ -107,7 +111,19 @@ class AddBadDriver extends React.Component {
               name="location2"
               placeholder="Location -laditude (Optional)"
             />
-            
+             {/* <Input
+                value={this.state.thumbsup}
+                onChange={this.handleInputChange}
+                name="thumbsup"
+                placeholder="thumbsup"
+              />  
+              <Input
+              value={this.state.thumbsdown}
+              onChange={this.handleInputChange}
+              name="thumbsdown"
+              placeholder="thumbsdown"
+            />
+             */}
               <TextArea
                 value={this.state.synopsis}
                 onChange={this.handleInputChange}

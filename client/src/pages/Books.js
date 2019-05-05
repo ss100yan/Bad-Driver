@@ -12,15 +12,18 @@ import { googleName } from "./login";
 
 
 
-class Books extends Component {
+class Books extends React.Component {
   state = {
     books: [],
-    user:"",
+    user: "",
     title: "",
     author: "",
     synopsis: "",
-    location1: "",
-    location2: ""
+    plate: "",
+    location1: "25.761681",
+    location2:"-80.191788",
+    thumbsup: "0",
+    thumbsdown: "0"
   };
 
   componentDidMount() {
@@ -30,7 +33,9 @@ class Books extends Component {
   loadBooks = () => {
     API.getBooks()
       .then(res =>
-        this.setState({ books: res.data, user:"", title: "", author: "", synopsis: "",plate:"" })
+        this.setState({ books: res.data, user: "", title: "", author: "", synopsis: "", plate: "", location1: "25.761681",
+        location2:"-80.191788",  thumbsup: "0",
+        thumbsdown: "0"})
       )
       .catch(err => console.log(err));
   };
@@ -59,6 +64,8 @@ class Books extends Component {
         plate: this.state.plate,
         location1: this.state.location1,
         location2: this.state.location2,
+        thumbsup: this.state.thumbsup,
+        thumbsdown: this.state.thumbsdown,
       })
         .then(res => this.loadBooks())
         .catch(err => console.log(err));
@@ -91,14 +98,19 @@ class Books extends Component {
                     </Link>
                     
                     <br/>
-        <button type="button" class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-thumbs-up"></span>{book.thumsup}
-        </button>
+                    <FormBtn
+                disabled={!(this.state.comment)}
+                onClick={this.handleFormSubmit}
+              ><span class="glyphicon glyphicon-thumbs-up"></span>
+               {book.thumbsup}
+              </FormBtn>
 
-        <button type="button" class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-thumbs-down"></span>{book.thumsdown}
-        </button>
-        <br/>
+              <FormBtn
+                // disabled={!(this.state.comment)}
+                // onClick={this.handleFormSubmit}
+              ><span class="glyphicon glyphicon-thumbs-up"></span>
+               {book.thumbsdown}
+              </FormBtn>
                     {/* <button type="button" class="btn btn-warning"    >Coments</button> */}
                     <a href={"/books/" + book._id}>Coments</a>
                     <DeleteBtn onClick={() => this.deleteBook(book._id)} />

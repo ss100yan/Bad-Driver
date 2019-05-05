@@ -22,40 +22,40 @@ class Detail extends Component {
       <Container fluid>
         <Row>
           <Col size="md-12">
-            <Jumbotron>
-            {/* <iframe width="550" height="200"src={this.state.book.author}></iframe> */}
+            {/* <Jumbotron>
+            
               <h4>
                 {this.state.book.title} 
-                {/* by {this.state.book.author} */}
+                by {this.state.book.author}
               </h4>
-            </Jumbotron>
+            </Jumbotron> */}
           </Col>
         </Row>
         <Row>
           <Col size="md-6 md-offset-1">
             <article>
-              <h1>Coments</h1>
-              <p>
+              <h1>Leave a comment</h1>
+              {/* <p>
                 {this.state.book.synopsis}
-              </p>
+              </p> */}
             </article>
-            <Input
+            {/* <Input
               value={this.state.location2}
               onChange={this.handleInputChange}
               name="user"
               placeholder="user"
-            />
+            /> */}
             <form>
               <TextArea
                 value={this.state.synopsis}
                 onChange={this.handleInputChange}
-                name="synopsis"
+                name="comment"
                 placeholder="Comment"
               />
               <FormBtn
-                disabled={!(this.state.author && this.state.title)}
+                disabled={!(this.state.comment)}
                 onClick={this.handleFormSubmit}
-              >
+              ><span class="glyphicon glyphicon-thumbs-up"></span>
                 Submit 
               </FormBtn>
             </form>

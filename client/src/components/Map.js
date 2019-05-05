@@ -22,8 +22,8 @@ class SimpleMap extends Component {
           defaultZoom={this.props.zoom}
         >
           <AnyReactComponent
-            lat={59.955413}
-            lng={30.337844}
+            lat={25.761681}
+            lng={-80.191788}
             text="My Marker"
           />
         </GoogleMapReact>
