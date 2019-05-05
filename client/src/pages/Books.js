@@ -99,18 +99,19 @@ class Books extends React.Component {
                     
                     <br/>
                     <FormBtn
+                // disabled={!(this.state.comment)}
+                // onClick={this.handleFormSubmit}
+              ><span class="glyphicon glyphicon-thumbs-down"></span>
+               {book.thumbsdown}
+              </FormBtn>
+                    <FormBtn
                 disabled={!(this.state.comment)}
                 onClick={this.handleFormSubmit}
               ><span class="glyphicon glyphicon-thumbs-up"></span>
                {book.thumbsup}
               </FormBtn>
 
-              <FormBtn
-                // disabled={!(this.state.comment)}
-                // onClick={this.handleFormSubmit}
-              ><span class="glyphicon glyphicon-thumbs-up"></span>
-               {book.thumbsdown}
-              </FormBtn>
+              
                     {/* <button type="button" class="btn btn-warning"    >Coments</button> */}
                     <a href={"/books/" + book._id}>Coments</a>
                     <DeleteBtn onClick={() => this.deleteBook(book._id)} />
