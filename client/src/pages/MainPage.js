@@ -138,13 +138,22 @@ class Books extends React.Component {
 
               
                     <a href={"/books/" + book._id}>Leave a coment</a>
-                    <DeleteBtn onClick={() => this.deleteBook(book._id)} />
+                    {/* <DeleteBtn onClick={() => this.deleteBook(book._id)} /> */}
 
 
                           <br></br> <p>Comments:</p>
                           
-                                    <p> 
-                                    {book.comments[0]}</p>
+                                    <p>{book.comments[0]}</p>
+                                    <p>{book.comments[1]}</p>
+                                    <p>{book.comments[2]}</p>
+                                    <p>{book.comments[3]}</p>
+                                    <p>{book.comments[4]}</p>
+                                    <p>{book.comments[5]}</p>
+                                    <p>{book.comments[6]}</p>
+                                    <p>{book.comments[7]}</p>
+                                    <p>{book.comments[8]}</p>
+                                    <p>{book.comments[9]}</p>
+
                   </ListItem>
 
 
