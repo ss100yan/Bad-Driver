@@ -26,9 +26,9 @@ class login extends React.Component {
           <Col size="md-6">
           <div id="googleButton"></div>
           <GoogleLogin
-    clientId= "919709182816-2hg84lnsgi74a4stbp4657ofr7a2keq9.apps.googleusercontent.com"
+    // clientId= "919709182816-2hg84lnsgi74a4stbp4657ofr7a2keq9.apps.googleusercontent.com"
 
-    // "919709182816-ep64esfta7208lf1qmlcrl3aoiftjq63.apps.googleusercontent.com"
+    clientId= "919709182816-ep64esfta7208lf1qmlcrl3aoiftjq63.apps.googleusercontent.com"
     buttonText="Login"
     onSuccess={console.log("test")}
     onSuccess={responseGoogle}
