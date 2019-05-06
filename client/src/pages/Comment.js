@@ -20,11 +20,14 @@ class Comment extends Component {
   }
 
 
+ 
+
   addComment = id => {
-    API.updateBook(id, {comments:123})
+    API.updateBook(id,{$push: {comments:this.state.comment}})
       .then(res => this.loadBooks())
       .catch(err => console.log(err));
   };
+
 
   render() {
     return (
@@ -43,14 +46,17 @@ class Comment extends Component {
          
             <form>
               <TextArea
-                value={this.state.comment}
+                // value={this.state.comment}
                 // onChange={this.handleInputChange}
                 name="comment"
                 placeholder="Comment"
               />
               <FormBtn
                 // disabled={!(this.state.comment)}
-                onClick={() => this.updateComment(this.props.match.params.id)} >
+                onClick={() => this.addComment(this.props.match.params.id)} 
+                >
+
+
              
                 Submit 
               </FormBtn>

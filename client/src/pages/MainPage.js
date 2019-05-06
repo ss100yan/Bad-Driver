@@ -8,6 +8,7 @@ import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import SimpleMap from "../components/Map";
 import LP from "./LP.jpg"
+import LP2 from "./LP2.jpg"
 import { googleName } from "./login";
 
 
@@ -55,7 +56,7 @@ class Books extends React.Component {
 
 
  addComment = id => {
-    API.updateBook(id, {comment:""})
+    API.updateBook(id,{$push: {comments:"comment"}})
       .then(res => this.loadBooks())
       .catch(err => console.log(err));
   };
@@ -112,7 +113,8 @@ class Books extends React.Component {
                     <iframe width="100%" height="260"src={book.author}></iframe>
                     <div><SimpleMap/></div>
                       <strong>
-                        {book.title} by {book.author}
+                        {book.title} 
+                        {/* by {book.author} */}
                         
                       </strong>
            
@@ -135,9 +137,18 @@ class Books extends React.Component {
               </FormBtn>
 
               
-                    <a href={"/books/" + book._id}>Coments</a>
+                    <a href={"/books/" + book._id}>Leave a coment</a>
                     <DeleteBtn onClick={() => this.deleteBook(book._id)} />
+
+
+                          <br></br> <p>Comments:</p>
+                          
+                                    <p> 
+                                    {book.comments[3]}</p>
                   </ListItem>
+
+
+
                 ))}
               </List>
             ) : (
@@ -147,16 +158,15 @@ class Books extends React.Component {
           <Col size="md-1"></Col>
            <Col size="md-3">
             <Jumbotron>
-              <h5>The worst in May 
+              <h5>This Mont:
                 
               </h5>
             </Jumbotron>
             
             <ol>
-              <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 300 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>____456____890__</li>
-              <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 300 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>____456____990__</li>
-              <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 300 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>____456____012__</li>
-              <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 300 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>____456____012__</li>
+              <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 260 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>____456____890</li>
+              <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 260 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>____456____890</li>
+              <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 260 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>____456____890</li>
             </ol>
            
           </Col>
