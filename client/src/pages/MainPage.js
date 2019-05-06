@@ -144,7 +144,7 @@ class Books extends React.Component {
                           <br></br> <p>Comments:</p>
                           
                                     <p> 
-                                    {book.comments[3]}</p>
+                                    {book.comments[0]}</p>
                   </ListItem>
 
 

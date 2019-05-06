@@ -19,6 +19,12 @@ class Comment extends Component {
       .catch(err => console.log(err));
   }
 
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
 
  
 
@@ -46,8 +52,8 @@ class Comment extends Component {
          
             <form>
               <TextArea
-                // value={this.state.comment}
-                // onChange={this.handleInputChange}
+                value={this.state.comment}
+                onChange={this.handleInputChange}
                 name="comment"
                 placeholder="Comment"
               />
