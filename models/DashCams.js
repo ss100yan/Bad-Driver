@@ -7,13 +7,13 @@ const bookSchema = new Schema({
   author: { type: String, required: true },
   synopsis: String,
   plate: String,
-  location1: String,
-  location2: String,
+  location1: Number,
+  location2: Number,
   addres:String,
   photo:String,
-  thumbsup:String,
-  thumbsdown: String,
-  comments:String,
+  thumbsup:Number,
+  thumbsdown: Number,
+  comments:[String],
   date: { type: Date, default: Date.now }
 });
 

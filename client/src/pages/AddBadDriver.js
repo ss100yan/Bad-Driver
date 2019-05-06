@@ -1,4 +1,4 @@
-import React from "react";
+import React  from "react";
 import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
@@ -6,6 +6,13 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import comment from "./Comment";
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  withRouter
+} from "react-router-dom";
 
 class AddBadDriver extends React.Component {
   state = {
@@ -15,10 +22,10 @@ class AddBadDriver extends React.Component {
     author: "",
     synopsis: "",
     plate: "",
-    location1: "25.761681",
-    location2:"-80.191788",
-    thumbsup: "0",
-    thumbsdown: "0"
+    location1: 25.761681,
+    location2:-80.191788,
+    thumbsup: 0,
+    thumbsdown: 0
   };
 
   componentDidMount() {
@@ -28,9 +35,9 @@ class AddBadDriver extends React.Component {
   loadBooks = () => {
     API.getBooks()
       .then(res =>
-        this.setState({ books: res.data, user: "", title: "", author: "", synopsis: "", plate: "", location1: "25.761681",
-        location2:"-80.191788",  thumbsup: "0",
-        thumbsdown: "0"})
+        this.setState({ books: res.data, user: "", title: "", author: "", synopsis: "", plate: "", location1: 25.761681,
+        location2:-80.191788,  thumbsup: 0,
+        thumbsdown: 0})
       )
       .catch(err => console.log(err));
   };
@@ -62,7 +69,7 @@ class AddBadDriver extends React.Component {
         thumbsup: this.state.thumbsup,
         thumbsdown: this.state.thumbsdown,
       })
-        .then(res => this.loadBooks())
+        .then(res => this.loadBooks()  )
         .catch(err => console.log(err));
     }
   };
@@ -111,19 +118,7 @@ class AddBadDriver extends React.Component {
               name="location2"
               placeholder="Location -laditude (Optional)"
             />
-             {/* <Input
-                value={this.state.thumbsup}
-                onChange={this.handleInputChange}
-                name="thumbsup"
-                placeholder="thumbsup"
-              />  
-              <Input
-              value={this.state.thumbsdown}
-              onChange={this.handleInputChange}
-              name="thumbsdown"
-              placeholder="thumbsdown"
-            />
-             */}
+            
               <TextArea
                 value={this.state.synopsis}
                 onChange={this.handleInputChange}
@@ -132,7 +127,7 @@ class AddBadDriver extends React.Component {
               />
               <FormBtn
                 disabled={!(this.state.author && this.state.title)}
-                onClick={this.handleFormSubmit}
+                onClick={this.handleFormSubmit }
               >
                 Submit 
               </FormBtn>

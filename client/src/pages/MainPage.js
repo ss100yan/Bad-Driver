@@ -22,8 +22,8 @@ class Books extends React.Component {
     plate: "",
     location1: "25.761681",
     location2:"-80.191788",
-    thumbsup: "0",
-    thumbsdown: "0"
+    thumbsup: 0,
+    thumbsdown: 0
   };
 
   componentDidMount() {
@@ -42,6 +42,27 @@ class Books extends React.Component {
 
   deleteBook = id => {
     API.deleteBook(id)
+      .then(res => this.loadBooks())
+      .catch(err => console.log(err));
+  };
+
+
+  updateThumbsdown = id => {
+    API.updateBook(id, {$inc:{thumbsdown:1}})
+      .then(res => this.loadBooks())
+      .catch(err => console.log(err));
+  };
+
+
+ addComment = id => {
+    API.updateBook(id, {comment:""})
+      .then(res => this.loadBooks())
+      .catch(err => console.log(err));
+  };
+
+
+  updateThumbsup = id => {
+    API.updateBook(id, {$inc:{thumbsup:1}})
       .then(res => this.loadBooks())
       .catch(err => console.log(err));
   };
@@ -98,21 +119,22 @@ class Books extends React.Component {
                     </Link>
                     
                     <br/>
+
                     <FormBtn
                 // disabled={!(this.state.comment)}
-                // onClick={this.handleFormSubmit}
+                onClick={() => this.updateThumbsdown(book._id)}
               ><span class="glyphicon glyphicon-thumbs-down"></span>
                {book.thumbsdown}
               </FormBtn>
+
                     <FormBtn
-                disabled={!(this.state.comment)}
-                onClick={this.handleFormSubmit}
+                // disabled={!(this.state.comment)}
+                onClick={() => this.updateThumbsup(book._id)}
               ><span class="glyphicon glyphicon-thumbs-up"></span>
                {book.thumbsup}
               </FormBtn>
 
               
-                    {/* <button type="button" class="btn btn-warning"    >Coments</button> */}
                     <a href={"/books/" + book._id}>Coments</a>
                     <DeleteBtn onClick={() => this.deleteBook(book._id)} />
                   </ListItem>

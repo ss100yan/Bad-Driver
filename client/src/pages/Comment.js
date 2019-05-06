@@ -4,10 +4,12 @@ import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import AddBadDriver from "./AddBadDriver";
 
-class Detail extends Component {
+class Comment extends Component {
   state = {
-    book: {}
+    book: {},
+    comment:""
   };
   // When this component mounts, grab the book with the _id of this.props.match.params.id
   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
@@ -17,45 +19,39 @@ class Detail extends Component {
       .catch(err => console.log(err));
   }
 
+
+  addComment = id => {
+    API.updateBook(id, {comments:123})
+      .then(res => this.loadBooks())
+      .catch(err => console.log(err));
+  };
+
   render() {
     return (
       <Container fluid>
         <Row>
           <Col size="md-12">
-            {/* <Jumbotron>
-            
-              <h4>
-                {this.state.book.title} 
-                by {this.state.book.author}
-              </h4>
-            </Jumbotron> */}
+       
           </Col>
         </Row>
         <Row>
           <Col size="md-6 md-offset-1">
             <article>
               <h1>Leave a comment</h1>
-              {/* <p>
-                {this.state.book.synopsis}
-              </p> */}
+              
             </article>
-            {/* <Input
-              value={this.state.location2}
-              onChange={this.handleInputChange}
-              name="user"
-              placeholder="user"
-            /> */}
+         
             <form>
               <TextArea
-                value={this.state.synopsis}
-                onChange={this.handleInputChange}
+                value={this.state.comment}
+                // onChange={this.handleInputChange}
                 name="comment"
                 placeholder="Comment"
               />
               <FormBtn
-                disabled={!(this.state.comment)}
-                onClick={this.handleFormSubmit}
-              ><span class="glyphicon glyphicon-thumbs-up"></span>
+                // disabled={!(this.state.comment)}
+                onClick={() => this.updateComment(this.props.match.params.id)} >
+             
                 Submit 
               </FormBtn>
             </form>
@@ -71,4 +67,4 @@ class Detail extends Component {
   }
 }
 
-export default Detail;
+export default Comment;
