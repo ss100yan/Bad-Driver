@@ -138,22 +138,19 @@ class Books extends React.Component {
 
               
                     <a href={"/books/" + book._id}>Leave a coment</a>
-                    {/* <DeleteBtn onClick={() => this.deleteBook(book._id)} /> */}
+                    <DeleteBtn onClick={() => this.deleteBook(book._id)} />
 
 
                           <br></br> <p>Comments:</p>
                           
-                                    <p>{book.comments[0]}</p>
-                                    <p>{book.comments[1]}</p>
-                                    <p>{book.comments[2]}</p>
-                                    <p>{book.comments[3]}</p>
-                                    <p>{book.comments[4]}</p>
-                                    <p>{book.comments[5]}</p>
-                                    <p>{book.comments[6]}</p>
-                                    <p>{book.comments[7]}</p>
-                                    <p>{book.comments[8]}</p>
-                                    <p>{book.comments[9]}</p>
+                         
+                                                      
+                                {book.comments.map((number) =>
+                                         
+                                         <li>{number}</li>
+                                         )}
 
+                                   
                   </ListItem>
 
 
@@ -171,13 +168,15 @@ class Books extends React.Component {
                 
               </h5>
             </Jumbotron>
-            
-            <ol>
-              <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 260 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>____456____890</li>
-              <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 260 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>____456____890</li>
-              <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 260 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>____456____890</li>
-            </ol>
-           
+            {this.state.books.map(book => (
+
+              <li style={{backgroundImage: 'url(' + LP + ')', height:40 ,width: 260 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>{book.plate}</li>))}
+            {/* // <ol>
+            //   <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 260 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>____456____890</li>
+            //   <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 260 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>____456____890</li>
+            //   <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 260 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>____456____890</li>
+            // </ol>
+            */}
           </Col>
         </Row>
       </Container>
