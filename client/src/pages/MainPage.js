@@ -106,17 +106,28 @@ class Books extends React.Component {
             {this.state.books.length ? (
               <List>
                 {this.state.books.map(book => (
+
                   <ListItem key={book._id}>
+
                     <Link to={"/books/" + book._id}>
+
                     <p>added by:<spsm>{book.user}</spsm></p>
+
                     <p>License Plate:<spam  >{book.plate}</spam></p>
-                    <iframe width="100%" height="260"src={book.author}></iframe>
-                    <div><SimpleMap/></div>
-                      <strong>
+                    
+                     <strong>
+
                         {book.title} 
+                        
                         {/* by {book.author} */}
                         
                       </strong>
+
+                    <iframe width="100%" height="260"src={book.author}></iframe>
+
+                    <div><SimpleMap/></div>
+
+                     
            
                     </Link>
                     
@@ -137,17 +148,24 @@ class Books extends React.Component {
               </FormBtn>
 
               
-                    <a href={"/books/" + book._id}>Leave a coment</a>
+                    <a href={"/books/" + book._id} style={{fontWeight: 'bold'}}>Leave a coment</a>
+
+                    {/*DeleteBtn for development use only */}
+
                     <DeleteBtn onClick={() => this.deleteBook(book._id)} />
 
-
-                          <br></br> <p>Comments:</p>
+                    <br></br>
+                          <br></br> <p style={{fontWeight: 'bold'}}>Comments:</p>
                           
-                         
+                           
                                                       
                                 {book.comments.map((number) =>
                                          
-                                         <li>{number}</li>
+                                         <li style={{
+                                        flexDirection: 'column',
+                                         backgroundColor: 'grey',
+                                         justifyContent: 'center',
+                                         alignItems: 'center'}}>{number}</li>
                                          )}
 
                                    
@@ -170,13 +188,10 @@ class Books extends React.Component {
             </Jumbotron>
             {this.state.books.map(book => (
 
+                      //  .sort by likes here!!!!!!!!!!
+
               <li style={{backgroundImage: 'url(' + LP + ')', height:40 ,width: 260 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>{book.plate}</li>))}
-            {/* // <ol>
-            //   <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 260 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>____456____890</li>
-            //   <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 260 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>____456____890</li>
-            //   <li style={{backgroundImage: 'url(' + LP + ')', height:60 ,width: 260 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>____456____890</li>
-            // </ol>
-            */}
+       
           </Col>
         </Row>
       </Container>
