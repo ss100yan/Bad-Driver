@@ -60,7 +60,7 @@ class AddBadDriver extends React.Component {
     if (this.state.title && this.state.author) {
       API.saveBook({
         title: this.state.title,
-        user: this.state.user,
+        user: localStorage.getItem("name"),
         author: this.state.author,
         synopsis: this.state.synopsis,
         plate: this.state.plate,
@@ -83,12 +83,12 @@ class AddBadDriver extends React.Component {
               <h4>Add New</h4>
             </Jumbotron>
             <form>
-            <Input
+            {/* <Input
                 value={this.state.user}
                 onChange={this.handleInputChange}
                 name="user"
                 placeholder="user"
-              />
+              /> */}
               <Input
                 value={this.state.title}
                 onChange={this.handleInputChange}
