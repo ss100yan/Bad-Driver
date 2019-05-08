@@ -21,7 +21,8 @@ function Nav() {
       {/* <li><a href="#">Page 2</a></li> */}
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a><span class="glyphicon glyphicon-user"></span>{localStorage.getItem("name")}<img src={localStorage.getItem("photo")} alt="image" style={{height:20 ,width: 20 }} /> </a></li>
+      <li><a><span class="glyphicon glyphicon-user"></span>{localStorage.getItem("name")}</a></li>
+      {/* <img src={localStorage.getItem("photo")} alt="image" style={{height:20 ,width: 20 }} />  */}
       <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       
     </ul>
