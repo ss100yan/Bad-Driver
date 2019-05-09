@@ -35,7 +35,7 @@ class Comment extends Component {
 
   addComment = id => {
     let name = localStorage.getItem("name");
-    API.updateBook(id,{$push: {comments: name+ "--"+this.state.comment}})
+    API.updateBook(id,{$push: {comments: name + "--"+this.state.comment}})
       .then(res => this.loadBooks())
       .catch(err => console.log(err));
   };
