@@ -155,7 +155,7 @@ class Books extends React.Component {
                     <DeleteBtn onClick={() => this.deleteBook(book._id)} />
 
                     <br></br>
-                          <br></br> <p style={{fontWeight: 'bold'}}>Comments:</p>
+                          <br></br> <p style={{fontWeight: 'bold'}}>Coments:</p>
                           
                            
                                                       
