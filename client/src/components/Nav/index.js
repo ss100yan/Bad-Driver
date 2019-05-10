@@ -11,6 +11,12 @@ function Nav() {
   //   hideLogin:false,
   //   hideLogout:true
   // };
+  // function ActionLink() {
+  //   function handleClick(e) {
+  //     e.preventDefault();
+  //     console.log('The link was clicked.');
+  //     localStorage.clear()
+  //   }
 
   return (
 
@@ -31,7 +37,7 @@ function Nav() {
       <li><a><span class="glyphicon glyphicon-user"></span>{localStorage.getItem("name")}</a></li>
       {/* <img src={localStorage.getItem("photo")} alt="image" style={{height:20 ,width: 20 }} />  */}
       {/* {localStorage.getItem("isLoggedIn")} */}
-      <li style={{visibility: "visible"}}><a href="#" onClick={localStorage.clear()} ><span class="glyphicon glyphicon-log-out" ></span> Logout</a></li>
+      {/* <li style={{visibility: "visible"}}><a href="#"  ><span class="glyphicon glyphicon-log-out" ></span> Logout</a></li> */}
       <li style={{visibility: "visible" }}><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       
     </ul>
