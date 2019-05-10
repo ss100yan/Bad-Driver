@@ -30,6 +30,7 @@ class login extends React.Component {
       localStorage.setItem("photo", FbImmage)
       localStorage.setItem("isLoggedIn", true)
       this.setState({name: FbName, photo:FbImmage, isLoggedIn:true})
+      window.location = '/' 
     }
 
     const responseGoogle = (response) => {
@@ -42,7 +43,7 @@ class login extends React.Component {
       localStorage.setItem("photo", googleImmage)
       localStorage.setItem("isLoggedIn", true)
       this.setState({name: googleName, photo:googleImmage, isLoggedIn:true})
-      
+      window.location = '/' 
     }
     
      const logout =(response) =>{
@@ -50,6 +51,7 @@ class login extends React.Component {
       localStorage.removeItem("photo")
       localStorage.setItem("isLoggedIn")
       this.setState({name: "", photo:"", isLoggedIn:false})
+      window.location = '/' 
      }
      localStorage.getItem("name")
     return (

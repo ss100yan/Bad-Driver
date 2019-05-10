@@ -12,7 +12,8 @@ function Nav() {
   function handleClick(e) {
     e.preventDefault();
     console.log('The link was clicked.');
-    {localStorage.clear()}
+    localStorage.clear()
+      window.location = '/'
     
   }
 

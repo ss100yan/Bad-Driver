@@ -69,7 +69,7 @@ class AddBadDriver extends React.Component {
         thumbsup: this.state.thumbsup,
         thumbsdown: this.state.thumbsdown,
       })
-        .then(res => this.loadBooks()  )
+        .then(res => this.loadBooks(), window.location = '/'  )
         .catch(err => console.log(err));
     }
   };
@@ -129,7 +129,7 @@ class AddBadDriver extends React.Component {
                 placeholder="About (Optional)"
               />
               <FormBtn
-                disabled={!(this.state.user && this.state.title)}
+                disabled={!(localStorage.getItem("name") && this.state.title)}
                 onClick={this.handleFormSubmit }
               >
                 Submit 
