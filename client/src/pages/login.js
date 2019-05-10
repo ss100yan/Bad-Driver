@@ -48,15 +48,21 @@ class login extends React.Component {
      const logout =(response) =>{
       localStorage.removeItem("name")
       localStorage.removeItem("photo")
-      localStorage.removeItem("isLoggedIn")
+      localStorage.setItem("isLoggedIn")
       this.setState({name: "", photo:"", isLoggedIn:false})
      }
      localStorage.getItem("name")
     return (
       <Container fluid>
+      <Row><br></br></Row>
+      <Row><br></br></Row>
+      <Row><br></br></Row> 
+      <Row><br></br></Row> 
+      <Row><br></br></Row>
+      <Row><br></br></Row>
         <Row>
-            
-          <Col size="md-6">
+        <Col size="md-3"></Col>
+          <Col size="md-3">
           <div id="googleButton"></div>
           <GoogleLogin
 
@@ -80,19 +86,19 @@ class login extends React.Component {
  <div>
 
 
- <GoogleLogout
+ {/* <GoogleLogout
       buttonText="Logout"
       onLogoutSuccess={logout}
     >
-    </GoogleLogout>
+    </GoogleLogout> */}
  </div>
 
-
-
+ </Col>
+ <Col size="md-4">
 <div>
 <FacebookLogin
     appId="374590499934008"
-    autoLoad={true}
+    autoLoad={false}
     fields="name,email,picture"
     // onClick={componentClicked}
     callback={responseFacebook} />
