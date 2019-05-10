@@ -16,7 +16,7 @@ import { googleName } from "./login";
 class Books extends React.Component {
   state = {
     books: [],
-    user: "",
+    user: localStorage.getItem("name"),
     title: "",
     author: "",
     synopsis: "",
@@ -80,7 +80,7 @@ class Books extends React.Component {
     if (this.state.title && this.state.author) {
       API.saveBook({
         title: this.state.title,
-        user: this.state.user,
+        user: localStorage.getItem("name"),
         author: this.state.author,
         synopsis: this.state.synopsis,
         plate: this.state.plate,
@@ -134,14 +134,14 @@ class Books extends React.Component {
                     <br/>
 
                     <FormBtn
-                // disabled={!(this.state.comment)}
+               disabled={!(localStorage.getItem("name") )}
                 onClick={() => this.updateThumbsdown(book._id)}
               ><span class="glyphicon glyphicon-thumbs-down"></span>
                {book.thumbsdown}
               </FormBtn>
 
                     <FormBtn
-                // disabled={!(this.state.comment)}
+                disabled={!(localStorage.getItem("name") )}
                 onClick={() => this.updateThumbsup(book._id)}
               ><span class="glyphicon glyphicon-thumbs-up"></span>
                {book.thumbsup}

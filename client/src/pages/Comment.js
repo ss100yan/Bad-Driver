@@ -14,7 +14,8 @@ import login from "./login"
 class Comment extends Component {
   state = {
     book: {},
-    comment:""
+    comment:"",
+    user: localStorage.getItem("name")
   };
   // When this component mounts, grab the book with the _id of this.props.match.params.id
   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
@@ -64,7 +65,7 @@ class Comment extends Component {
                 placeholder="Comment"
               />
               <FormBtn
-                // disabled={!(this.state.comment)}
+               disabled={!(this.state.user && this.state.comment)}
                 onClick={() => this.addComment(this.props.match.params.id)} 
                 >
 

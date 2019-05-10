@@ -129,7 +129,7 @@ class AddBadDriver extends React.Component {
                 placeholder="About (Optional)"
               />
               <FormBtn
-                disabled={!(this.state.author && this.state.title)}
+                disabled={!(this.state.user && this.state.title)}
                 onClick={this.handleFormSubmit }
               >
                 Submit 
