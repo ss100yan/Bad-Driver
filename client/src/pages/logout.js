@@ -8,7 +8,7 @@ import FacebookLogin from 'react-facebook-login';
  
 
 
-class login extends React.Component {
+class logout extends React.Component {
  
       state={
          
@@ -20,17 +20,6 @@ class login extends React.Component {
    
   render() {
  
-    const responseFacebook = (response) => {
-      console.log(response);
-     
-      const FbName = response.name;
-      const FbImmage = response.picture;
-      console.log(FbName);
-      localStorage.setItem("name", FbName)
-      localStorage.setItem("photo", FbImmage)
-      localStorage.setItem("isLoggedIn", true)
-      this.setState({name: FbName, photo:FbImmage, isLoggedIn:true})
-    }
 
     const responseGoogle = (response) => {
 
@@ -58,24 +47,7 @@ class login extends React.Component {
             
           <Col size="md-6">
           <div id="googleButton"></div>
-          <GoogleLogin
-
-          // for local host
-    clientId= "919709182816-2hg84lnsgi74a4stbp4657ofr7a2keq9.apps.googleusercontent.com"
-
-      // for heroku
-      
-    // clientId= "919709182816-ep64esfta7208lf1qmlcrl3aoiftjq63.apps.googleusercontent.com"
-    buttonText="Login with Google"
-   
-    onSuccess={responseGoogle}
-    onFailure={responseGoogle}
     
-    cookiePolicy={'single_host_origin'}
-   
-
-  
-  />
   
  <div>
 
@@ -87,18 +59,6 @@ class login extends React.Component {
     </GoogleLogout>
  </div>
 
-
-
-<div>
-<FacebookLogin
-    appId="374590499934008"
-    autoLoad={true}
-    fields="name,email,picture"
-    // onClick={componentClicked}
-    callback={responseFacebook} />
-
-
-</div>
           </Col>
          
          </Row>
@@ -113,4 +73,4 @@ class login extends React.Component {
 
 
 
-export default login;
+export default logout;

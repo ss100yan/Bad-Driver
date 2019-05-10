@@ -23,7 +23,9 @@ function Nav() {
     <ul class="nav navbar-nav navbar-right">
       <li><a><span class="glyphicon glyphicon-user"></span>{localStorage.getItem("name")}</a></li>
       {/* <img src={localStorage.getItem("photo")} alt="image" style={{height:20 ,width: 20 }} />  */}
-      <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      {/* {localStorage.getItem("isLoggedIn")} */}
+      {/* <li style={{visibility: "visible"}}><a href="/logout"><span class="glyphicon glyphicon-log-out" ></span> Logout</a></li> */}
+      <li style={{visibility: "visible"}}><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       
     </ul>
   </div>
