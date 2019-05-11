@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Books from "./pages/MainPage";
 import AddBadDriver from "./pages/AddBadDriver";
 import login from "./pages/login";
+import geoLocation from "./components/geoLocation";
+
 // import logout from "./pages/logout";
 import Detail from "./pages/Comment";
 import NoMatch from "./pages/NoMatch";
@@ -17,6 +19,7 @@ function App() {
     <Router>
       <div className="bg">
         <Nav />
+        {/* <geoLocation/> */}
         <Switch>
           <Route exact path="/login" component={login} />
           {/* <Route exact path="/logout" component={logout} /> */}

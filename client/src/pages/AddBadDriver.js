@@ -57,11 +57,12 @@ class AddBadDriver extends React.Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
+   
     if (this.state.title && this.state.author) {
       API.saveBook({
         title: this.state.title,
         user: localStorage.getItem("name"),
-        author: this.state.author,
+        author: this.state.author.replace("watch?v=", "embed/"),
         synopsis: this.state.synopsis,
         plate: this.state.plate,
         location1: this.state.location1,
