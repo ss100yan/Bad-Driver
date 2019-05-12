@@ -63,9 +63,9 @@ class login extends React.Component {
       <Row><br></br></Row>
       <Row><br></br></Row>
         <Row>
-        <Col size="md-3"></Col>
+        <Col size="md-5"></Col>
           <Col size="md-3">
-          <div id="googleButton"></div>
+          <div id="googleButton" style={{}}></div>
           <GoogleLogin
 
           // for local host
@@ -96,14 +96,27 @@ class login extends React.Component {
  </div>
 
  </Col>
- <Col size="md-4">
+ </Row> 
+      <Row><br></br></Row>
+      <Row><br></br></Row>
+      <Row><br></br></Row>
+      <Row><br></br></Row>
+ <Row>
+ <Col size="md-5"></Col>
+ <Col size="md-3">
+ 
+
 <div>
 <FacebookLogin
     appId="374590499934008"
     autoLoad={false}
     fields="name,email,picture"
     // onClick={componentClicked}
-    callback={responseFacebook} />
+    callback={responseFacebook}
+    //   cssClass="my-facebook-button-class"
+    // icon="fa-facebook"
+    
+    />
 
 
 </div>
