@@ -184,18 +184,19 @@ class Books extends React.Component {
             <Jumbotron>
               <h4>Most popular</h4>
             </Jumbotron>
+            <ol>
             {this.state.books
             .sort((b, a) => parseFloat(a.thumbsup) - parseFloat(b.thumbsup))
             // .sort(book=>{book.thumbsup})
             .map(book => (
+            
+                     
 
-                      //  .sort by likes here!!!!!!!!!!
-
-              <li style={{backgroundImage: 'url(' + LP + ')', height:40 ,width: 260 , fontSize: 30, marginTop:50, paddingTop:30, paddingBottom:60}}>{book.plate}</li>))}
+              <li style={{backgroundImage: 'url(' + LP + ')', height:20 ,width: 200 , fontSize: 24, marginTop:20, marginLeft:0, marginBottom:0, paddingTop:30, paddingBottom:54}}><strong style={{color:"", marginLeft:40}}>{book.plate}</strong></li>))}
 
               {/* .sort()
               .map() */}
-
+          </ol>
           </Col>
         </Row>
       </Container>

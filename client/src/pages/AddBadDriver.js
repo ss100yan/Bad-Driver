@@ -110,18 +110,18 @@ class AddBadDriver extends React.Component {
               name="author"
               placeholder="You-tube link (required)"
             />
-                <Input
+                {/* <Input
                 value={this.state.location1}
                 onChange={this.handleInputChange}
                 name="location1"
                 placeholder="Location -longtitude (Optional)"
-              />  
-              <Input
+              />   */}
+              {/* <Input
               value={this.state.location2}
               onChange={this.handleInputChange}
               name="location2"
               placeholder="Location -laditude (Optional)"
-            />
+            /> */}
             
               <TextArea
                 value={this.state.synopsis}
