@@ -24,7 +24,8 @@ class Books extends React.Component {
     location1: "",
     location2:"",
     thumbsup: 0,
-    thumbsdown: 0
+    thumbsdown: 0,
+    thumbsUpDownEmail: ""
   };
 
   componentDidMount() {
@@ -36,7 +37,7 @@ class Books extends React.Component {
       .then(res =>
         this.setState({ books: res.data, user: "", title: "", author: "", synopsis: "", plate: "", location1: "",
         location2:"",  thumbsup: "0",
-        thumbsdown: "0"})
+        thumbsdown: "0",thumbsUpDownEmail: ""})
       )
       .catch(err => console.log(err));
   };
@@ -48,12 +49,7 @@ class Books extends React.Component {
   };
 
 
-  updateThumbsdown = id => {
-    API.updateBook(id, {$inc:{thumbsdown:1}})
-      .then(res => this.loadBooks())
-      .catch(err => console.log(err));
-  };
-
+ 
 
  addComment = id => {
     API.updateBook(id,{$push: {comments:"comment"}})
@@ -61,11 +57,33 @@ class Books extends React.Component {
       .catch(err => console.log(err));
   };
 
+  // thumbsUpDownEmailt = id => {
+  //   API.updateBook(id,{$push: {thumbsUpDownEmail:localStorage.getItem("email")}})
+  //     // .then(res => this.loadBooks())
+  //     .catch(err => console.log(err));
+  // };
 
-  updateThumbsup = id => {
-    API.updateBook(id, {$inc:{thumbsup:1}})
+  updateThumbsdown = id => {
+    if
+     ( ! this.state.books.find(x => x._id == id).thumbsUpDownEmail.map(x => x == localStorage.getItem("email")))
+  
+    {console.log(this.state.books.find(x => x._id == id).thumbsUpDownEmail );
+    API.updateBook(id, {$inc:{thumbsdown:1} , $push: {thumbsUpDownEmail:localStorage.getItem("email")}})
       .then(res => this.loadBooks())
       .catch(err => console.log(err));
+    }
+  };
+
+
+
+  updateThumbsup = id => {
+    if
+    ( ! this.state.books.find(x => x._id == id).thumbsUpDownEmail.map(x => x == localStorage.getItem("email")))
+    {
+    API.updateBook(id, {$inc:{thumbsup:1} , $push: {thumbsUpDownEmail:localStorage.getItem("email")}})
+      .then(res => this.loadBooks())
+      .catch(err => console.log(err));
+    }
   };
 
   handleInputChange = event => {

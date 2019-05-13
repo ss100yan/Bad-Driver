@@ -14,6 +14,7 @@ const bookSchema = new Schema({
   thumbsup:Number,
   thumbsdown: Number,
   comments:[String],
+  thumbsUpDownEmail:[String],
   date: { type: Date, default: Date.now }
 });
 

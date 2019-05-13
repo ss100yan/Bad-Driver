@@ -25,9 +25,11 @@ class login extends React.Component {
      
       const FbName = response.name;
       const FbImmage = response.picture;
+      const FbEmail = response.email;
       console.log(FbName);
       localStorage.setItem("name", FbName)
       localStorage.setItem("photo", FbImmage)
+      localStorage.setItem("email", FbEmail)
       localStorage.setItem("isLoggedIn", true)
       this.setState({name: FbName, photo:FbImmage, isLoggedIn:true})
       window.location = '/' 
@@ -37,10 +39,12 @@ class login extends React.Component {
 
       console.log(response.profileObj);
       const googleName = response.profileObj.name;
-      const googleImmage = response.profileObj.imageUrl
+      const googleImmage = response.profileObj.imageUrl;
+      const googleEmail = response.profileObj.email;
       console.log(googleName);
       localStorage.setItem("name", googleName)
       localStorage.setItem("photo", googleImmage)
+      localStorage.setItem("email", googleEmail)
       localStorage.setItem("isLoggedIn", true)
       this.setState({name: googleName, photo:googleImmage, isLoggedIn:true})
       window.location = '/' 
@@ -69,11 +73,11 @@ class login extends React.Component {
           <GoogleLogin
 
           // for local host
-    // clientId= "919709182816-2hg84lnsgi74a4stbp4657ofr7a2keq9.apps.googleusercontent.com"
+    clientId= "919709182816-2hg84lnsgi74a4stbp4657ofr7a2keq9.apps.googleusercontent.com"
 
       // for heroku
       
-    clientId= "919709182816-ep64esfta7208lf1qmlcrl3aoiftjq63.apps.googleusercontent.com"
+    // clientId= "919709182816-ep64esfta7208lf1qmlcrl3aoiftjq63.apps.googleusercontent.com"
     buttonText="Login with Google"
    
     onSuccess={responseGoogle}
