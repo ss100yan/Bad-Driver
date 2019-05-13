@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
- 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+import car from "./car.svg"
+const AnyReactComponent = ({ text }) => <img src={car} />;
  
 class SimpleMap extends Component {
   static defaultProps = {
@@ -20,11 +20,13 @@ class SimpleMap extends Component {
           bootstrapURLKeys={{ key: "AIzaSyCEksOUoC96zDNpnC_IkaTfzxjokwUCnac" }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
+          yesIWantToUseGoogleMapApiInternals
+          // onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
         >
           <AnyReactComponent
-            lat={25.761681}
-            lng={-80.191788}
-            text="My Marker"
+            lat={this.props.lat}
+            lng={this.props.lng}
+            text="Location"
           />
         </GoogleMapReact>
       </div>

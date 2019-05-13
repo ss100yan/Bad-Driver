@@ -14,7 +14,30 @@ import {
   withRouter
 } from "react-router-dom";
 
+
+// function YouTubeGetID(url){
+//   var ID = '';
+//   url = url.replace(/(>|<)/gi,'').split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
+//   if(url[2] !== undefined) {
+//     ID = url[2].split(/[^0-9a-z_\-]/i);
+//     ID = ID[0];
+//   }
+//   else {
+//     ID = url;
+//   }
+//     return ID;
+// }
+
+
+
 class AddBadDriver extends React.Component {
+
+
+
+
+
+
+  
   state = {
     books: [],
     user: "",
@@ -22,8 +45,8 @@ class AddBadDriver extends React.Component {
     author: "",
     synopsis: "",
     plate: "",
-    location1: 25.761681,
-    location2:-80.191788,
+    location1: "",
+    location2:"",
     thumbsup: 0,
     thumbsdown: 0
   };
@@ -35,12 +58,33 @@ class AddBadDriver extends React.Component {
   loadBooks = () => {
     API.getBooks()
       .then(res =>
-        this.setState({ books: res.data, user: "", title: "", author: "", synopsis: "", plate: "", location1: 25.761681,
-        location2:-80.191788,  thumbsup: 0,
+        this.setState({ books: res.data, user: "", title: "", author: "", synopsis: "", plate: "", location1: "",
+        location2:"",  thumbsup: 0,
         thumbsdown: 0})
       )
       .catch(err => console.log(err));
   };
+
+  
+   // searches the GoogleBooks API storing the data in books array
+   searchBooks = query => {
+    API.searchBooks(query)
+      .then(res =>
+        this.setState(
+          {
+            location1:res.data.items[0].recordingDetails.location.latitude,
+            location2:res.data.items[0].recordingDetails.location.longitude
+          },
+         
+          console.log(res.data.items[0].recordingDetails.location.latitude),
+          console.log(res.data.items[0].recordingDetails.location.longitude),
+          
+        )
+       
+      ) 
+      
+      .catch(err => console.log(err));
+  }; 
 
   deleteBook = id => {
     API.deleteBook(id)
@@ -50,6 +94,7 @@ class AddBadDriver extends React.Component {
 
   handleInputChange = event => {
     const { name, value } = event.target;
+    this.searchBooks(this.state.author.replace(/(>|<)/gi,'').split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/));
     this.setState({
       [name]: value
     });
@@ -87,6 +132,12 @@ class AddBadDriver extends React.Component {
               
             </Jumbotron>
             <form>
+            <Input
+              value={this.state.author}
+              onChange={this.handleInputChange}
+              name="author"
+              placeholder="You-tube link (required)"
+            />
             {/* <Input
                 value={this.state.user}
                 onChange={this.handleInputChange}
@@ -101,15 +152,10 @@ class AddBadDriver extends React.Component {
               />
                <Input
                 value={this.state.plate}
-                onChange={this.handleInputChange}
+                onChange={this.handleInputChange }
                 name="plate"
                 placeholder="License Plate "
-              />  <Input
-              value={this.state.author}
-              onChange={this.handleInputChange}
-              name="author"
-              placeholder="You-tube link (required)"
-            />
+              />  
                 {/* <Input
                 value={this.state.location1}
                 onChange={this.handleInputChange}

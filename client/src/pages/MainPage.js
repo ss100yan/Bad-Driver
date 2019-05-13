@@ -21,8 +21,8 @@ class Books extends React.Component {
     author: "",
     synopsis: "",
     plate: "",
-    location1: "25.761681",
-    location2:"-80.191788",
+    location1: "",
+    location2:"",
     thumbsup: 0,
     thumbsdown: 0
   };
@@ -34,8 +34,8 @@ class Books extends React.Component {
   loadBooks = () => {
     API.getBooks()
       .then(res =>
-        this.setState({ books: res.data, user: "", title: "", author: "", synopsis: "", plate: "", location1: "25.761681",
-        location2:"-80.191788",  thumbsup: "0",
+        this.setState({ books: res.data, user: "", title: "", author: "", synopsis: "", plate: "", location1: "",
+        location2:"",  thumbsup: "0",
         thumbsdown: "0"})
       )
       .catch(err => console.log(err));
@@ -125,7 +125,7 @@ class Books extends React.Component {
 
                     <iframe width="100%" height="260"src={book.author}></iframe>
 
-                    <div><SimpleMap/></div>
+                    <div><SimpleMap lat={book.location1} lng={book.location2} /></div>
 
                      
            

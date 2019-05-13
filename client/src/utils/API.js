@@ -1,6 +1,10 @@
 import axios from "axios";
+const BASEURL = "https://www.googleapis.com/youtube/v3/videos?part=recordingDetails&key=AIzaSyBGhg4wbmxE70WOBGZr0V7dB8UCZ_q_9JQ&id=";
 
 export default {
+  searchBooks: function(query) {
+    return axios.get(BASEURL + query);
+  },
   // Gets all books
   getBooks: function() {
     return axios.get("/api/books");
