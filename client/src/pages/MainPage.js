@@ -8,8 +8,7 @@ import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import SimpleMap from "../components/Map";
 import LP from "./LP.jpg"
-import LP2 from "./LP2.jpg"
-import { googleName } from "./login";
+
 
 
 
