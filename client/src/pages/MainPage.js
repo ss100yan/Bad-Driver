@@ -65,9 +65,9 @@ class Books extends React.Component {
 
   updateThumbsdown = id => {
     if
-     ( ! this.state.books.find(x => x._id == id).thumbsUpDownEmail.map(x => x == localStorage.getItem("email")))
+     (! this.state.books.find(x => x._id == id).thumbsUpDownEmail.includes(localStorage.getItem("email")))
   
-    {console.log(this.state.books.find(x => x._id == id).thumbsUpDownEmail );
+    {console.log(this.state.books.find(x => x._id !== id).thumbsUpDownEmail );
     API.updateBook(id, {$inc:{thumbsdown:1} , $push: {thumbsUpDownEmail:localStorage.getItem("email")}})
       .then(res => this.loadBooks())
       .catch(err => console.log(err));
@@ -78,7 +78,7 @@ class Books extends React.Component {
 
   updateThumbsup = id => {
     if
-    ( ! this.state.books.find(x => x._id == id).thumbsUpDownEmail.map(x => x == localStorage.getItem("email")))
+    (! this.state.books.find(x => x._id == id).thumbsUpDownEmail.includes(localStorage.getItem("email")))
     {
     API.updateBook(id, {$inc:{thumbsup:1} , $push: {thumbsUpDownEmail:localStorage.getItem("email")}})
       .then(res => this.loadBooks())
