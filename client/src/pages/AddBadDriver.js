@@ -71,14 +71,20 @@ class AddBadDriver extends React.Component {
     API.searchBooks(query)
       .then(res =>
         this.setState(
-          {
-            location1:res.data.items[0].recordingDetails.location.latitude,
-            location2:res.data.items[0].recordingDetails.location.longitude
-          },
-         
-          console.log(res.data.items[0].recordingDetails.location.latitude),
-          console.log(res.data.items[0].recordingDetails.location.longitude),
-          
+        
+          API.saveBook({
+            title: this.state.title,
+            user: localStorage.getItem("name"),
+            author: this.state.author.replace("watch?v=", "embed/"),
+            synopsis: this.state.synopsis,
+            plate: this.state.plate,
+            location1: res.data.items[0].recordingDetails.location.latitude,
+            location2: res.data.items[0].recordingDetails.location.longitude,
+            thumbsup: this.state.thumbsup,
+            thumbsdown: this.state.thumbsdown,
+          })
+            .then(res => this.loadBooks(), window.location = '/'  )
+            .catch(err => console.log(err))
         )
        
       ) 
@@ -94,7 +100,7 @@ class AddBadDriver extends React.Component {
 
   handleInputChange = event => {
     const { name, value } = event.target;
-    this.searchBooks(this.state.author.replace(/(>|<)/gi,'').split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/));
+    
     this.setState({
       [name]: value
     });
@@ -104,19 +110,7 @@ class AddBadDriver extends React.Component {
     event.preventDefault();
    
     if (this.state.title && this.state.author) {
-      API.saveBook({
-        title: this.state.title,
-        user: localStorage.getItem("name"),
-        author: this.state.author.replace("watch?v=", "embed/"),
-        synopsis: this.state.synopsis,
-        plate: this.state.plate,
-        location1: this.state.location1,
-        location2: this.state.location2,
-        thumbsup: this.state.thumbsup,
-        thumbsdown: this.state.thumbsdown,
-      })
-        .then(res => this.loadBooks(), window.location = '/'  )
-        .catch(err => console.log(err));
+      this.searchBooks(this.state.author.replace(/(>|<)/gi,'').split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/));
     }
   };
 
@@ -132,12 +126,7 @@ class AddBadDriver extends React.Component {
               
             </Jumbotron>
             <form>
-            <Input
-              value={this.state.author}
-              onChange={this.handleInputChange}
-              name="author"
-              placeholder="You-tube link (required)"
-            />
+        
             {/* <Input
                 value={this.state.user}
                 onChange={this.handleInputChange}
@@ -150,6 +139,12 @@ class AddBadDriver extends React.Component {
                 name="title"
                 placeholder="Title (required)"
               />
+                  <Input
+              value={this.state.author}
+              onChange={this.handleInputChange}
+              name="author"
+              placeholder="You-tube link (required)"
+            />
                <Input
                 value={this.state.plate}
                 onChange={this.handleInputChange }
