@@ -71,25 +71,23 @@ class AddBadDriver extends React.Component {
     API.searchBooks(query)
       .then(res =>
         this.setState(
-        
-          API.saveBook({
-            title: this.state.title,
-            user: localStorage.getItem("name"),
-            author: this.state.author.replace("watch?v=", "embed/"),
-            synopsis: this.state.synopsis,
-            plate: this.state.plate,
+          {
             location1: res.data.items[0].recordingDetails.location.latitude,
             location2: res.data.items[0].recordingDetails.location.longitude,
-            thumbsup: this.state.thumbsup,
-            thumbsdown: this.state.thumbsdown,
-          })
-            .then(res => this.loadBooks(), window.location = '/'  )
-            .catch(err => console.log(err))
-        )
+           
+          },
+          console.log(res.data.items[0].recordingDetails.location.latitude),
+          console.log(res.data.items[0].recordingDetails.location.longitude),
+          console.log(this.state.location1),
+          console.log(this.state.location2)
+          )
+        
        
-      ) 
+      )
+            
       
-      .catch(err => console.log(err));
+      
+      .catch(err => console.log(err))
   }; 
 
   deleteBook = id => {
@@ -100,7 +98,7 @@ class AddBadDriver extends React.Component {
 
   handleInputChange = event => {
     const { name, value } = event.target;
-    
+    this.searchBooks(this.state.author.replace(/(>|<)/gi,'').split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/));
     this.setState({
       [name]: value
     });
@@ -110,7 +108,24 @@ class AddBadDriver extends React.Component {
     event.preventDefault();
    
     if (this.state.title && this.state.author) {
-      this.searchBooks(this.state.author.replace(/(>|<)/gi,'').split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/));
+      
+
+
+      API.saveBook({
+        title: this.state.title,
+        user: localStorage.getItem("name"),
+        author: this.state.author.replace("watch?v=", "embed/"),
+        synopsis: this.state.synopsis,
+        plate: this.state.plate,
+        location1:this.state.location1,
+        location2: this.state.location2,
+        thumbsup: this.state.thumbsup,
+        thumbsdown: this.state.thumbsdown,
+      })
+        .then(res => this.loadBooks(), window.location = '/'  )
+        .catch(err => console.log(err))
+    
+
     }
   };
 
