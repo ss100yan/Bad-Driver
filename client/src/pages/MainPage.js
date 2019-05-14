@@ -8,8 +8,8 @@ import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import SimpleMap from "../components/Map";
 import LP from "./LP.jpg"
-
-
+import chat from "./chat.svg"
+import user from "./user.svg"
 
 
 class Books extends React.Component {
@@ -128,7 +128,7 @@ class Books extends React.Component {
 
                     <Link to={"/books/" + book._id}>
 
-                    <p>added by:<spsm>{book.user}</spsm></p>
+                    <p><img src={user} style={{height:25,width:25}} />    <spsm>{book.user}</spsm></p>
 
                     <p>License Plate:<spam  >{book.plate}</spam></p>
                     
@@ -172,7 +172,7 @@ class Books extends React.Component {
                     <DeleteBtn onClick={() => this.deleteBook(book._id)} />
 
                     <br></br>
-                          <br></br> <p style={{fontWeight: 'bold'}}>Coments:</p>
+                          <br></br> <p style={{fontWeight: 'bold'}}>Coments:<img src={chat} style={{height:15,width:15}} /></p>
                           
                            
                                                       
