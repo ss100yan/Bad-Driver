@@ -1,6 +1,6 @@
-# KASP INC
+# KASP INC / KASP App
 
-UM-Boot camp Project3
+## Project 3 - Full Stack Development Program University of Miami 2019 - Project 3
 
 # Heroku https://south-florida-worst-drivers.herokuapp.com/
 
@@ -10,13 +10,10 @@ UM-Boot camp Project3
 * yarn install
 * yarn start
 
-# KASP App 
-
 ### *Publish dash-cam videos to enable safer driving in our community*
 
 ![screenshot](https://github.com/)
 
-## Project 3 - Full Stack Development Program University of Miami Cohort 2019
 
 ## Team Members
 
@@ -51,7 +48,7 @@ Safer driving in our community.
 
 ## Tech/Framed Used
 
-HTML, CSS, JavaScript, JQuery, MongoDB, NodeJS, Express, Heroku, Handlebars.
+HTML, CSS, JavaScript, JQuery, MongoDB, NodeJS, Express, Axios, Heroku, Handlebars.
 
 ### New Technology
 
