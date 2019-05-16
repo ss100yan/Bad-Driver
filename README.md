@@ -41,7 +41,7 @@ Future add-ons will enable publishing by simply taking a picture or via talk-to-
 
 
 ![gif of app flow]
-(https://files.slack.com/files-pri/TD4FY921M-FJC8M4FEE/bad-driver.png)
+(https://github.com/ss100yan/Bad-Driver/blob/master/client/public/Bad-Driver.png)
  
 ### Motivation
 Safer driving in our community.
