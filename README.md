@@ -36,7 +36,7 @@ Future add-ons will enable publishing by simply taking a picture or via talk-to-
 - View updated dash-cam videos with geo-location
 - Google Maps API call for location info
 - Facebook and Google log in authentication and authorization 
-- Most popular tagged videos in our dataabase are sorted, stored and displayed
+- Most popular tagged videos in our database are sorted, stored and displayed
 - Optional input form for adding to the database
 
 
