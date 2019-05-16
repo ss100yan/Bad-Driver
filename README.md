@@ -40,8 +40,7 @@ Future add-ons will enable publishing by simply taking a picture or via talk-to-
 - Optional input form for adding to the database
 
 
-![gif of app flow]
-(https://github.com/ss100yan/Bad-Driver/blob/master/client/public/Bad-Driver.png)
+![gif of app flow](https://github.com/ss100yan/Bad-Driver/blob/master/client/public/Bad-Driver.png/)
  
 ### Motivation
 Safer driving in our community.
