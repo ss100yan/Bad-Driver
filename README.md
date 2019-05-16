@@ -1,6 +1,6 @@
 # KASP INC / KASP App
 
-## Project 3 - Full Stack Development Program University of Miami 2019 - Project 3
+## Project 3 - Full Stack Development Program University of Miami 2019
 
 # Heroku https://south-florida-worst-drivers.herokuapp.com/
 
