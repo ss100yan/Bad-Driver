@@ -133,11 +133,12 @@ class AddBadDriver extends React.Component {
     return (
       <Container fluid>
         <Row>
+        <Col size="md-3"></Col>
           <Col size="md-6">
             <Jumbotron>
             
-              <h5>Add New</h5>
-              <h6>login to proceed</h6>
+           
+              <h4>login to proceed</h4>
               
             </Jumbotron>
             <form>

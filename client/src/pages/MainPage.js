@@ -199,7 +199,7 @@ class Books extends React.Component {
           <Col size="md-1"></Col>
            <Col size="md-3">
             <Jumbotron>
-              <h4>Most popular</h4>
+              <h3>Most popular</h3>
             </Jumbotron>
             <ol>
             {this.state.books
