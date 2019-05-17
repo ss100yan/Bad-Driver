@@ -41,7 +41,8 @@ Future add-ons will enable publishing by simply taking a picture or via talk-to-
 
 
 ![gif of app flow](https://github.com/ss100yan/Bad-Driver/blob/master/client/public/SystemDesign.png/)
- 
+![app flow 2](https://github.com/ss100yan/Bad-Driver/blob/master/client/public/Bad-Driver.png/) 
+
 ### Motivation
 - Safer driving in our community
 - Evolving driver database that can eventually be useful for various data collection agencies.
