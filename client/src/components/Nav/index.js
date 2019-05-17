@@ -230,9 +230,15 @@ class PersistentDrawerLeft extends React.Component {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" color="inherit" noWrap>
+            <Typography variant="h6" color="inherit" noWrap style={{ flex: 1 }}>
             SFL Bad Drivers
             </Typography>
+           
+         <div>
+      <a style={{marginRight:50 , color:"white"}}><span class="glyphicon glyphicon-user"  ></span>{localStorage.getItem("name")}</a>
+       {/* <img src={localStorage.getItem("photo")} alt="image" style={{height:20 ,width: 20 }} />  */}
+       {/* {localStorage.getItem("isLoggedIn")} */}
+    </div>
           </Toolbar>
         </AppBar>
         <Drawer

@@ -117,9 +117,9 @@ class Books extends React.Component {
         <Row>
          
           <Col size="md-7 sm-12">
-            <Jumbotron>
+            {/* <Jumbotron>
               <h4>Latest additions</h4>
-            </Jumbotron>
+            </Jumbotron> */}
             {this.state.books.length ? (
               <List>
                 {this.state.books.map(book => (
