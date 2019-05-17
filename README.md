@@ -54,7 +54,7 @@ HTML, CSS, JavaScript, Material UI, OAuth, Mongoose, MongoDB, NodeJS, Express, A
 ### API Reference
 
 Google Maps API: Add simple, embeddable map images to your website with minimal code. 
-YouTube API: for information including geolocation.
+YouTube API: for information including geolocation..
 
 ## Contributions
 
