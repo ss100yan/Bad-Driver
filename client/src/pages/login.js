@@ -104,13 +104,12 @@ class login extends React.Component {
       <Row><br></br></Row>
       <Row><br></br></Row>
       <Row><br></br></Row>
-      <Row><br></br></Row>
  <Row>
- <Col size="md-5"></Col>
- <Col size="md-3">
+ <Col size="md-4"></Col>
+ <Col size="md-4">
  
 
-<div>
+<div style={{paddingLeft:75}}>
 <FacebookLogin
     appId="374590499934008"
     autoLoad={false}
