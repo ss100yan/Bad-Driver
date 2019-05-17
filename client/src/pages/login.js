@@ -3,7 +3,7 @@ import GoogleLogin from 'react-google-login';
 import { Col, Row, Container } from "../components/Grid";
 import { GoogleLogout } from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
-  
+
 
  
 

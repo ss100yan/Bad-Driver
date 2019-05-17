@@ -74,6 +74,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import { Home, ExitToApp, GetApp, SettingsPower } from '@material-ui/icons';
+import user from "./user.svg"
+
 // import IconButton from '@material-ui/core/IconButton';
 // import MenuIcon from '@material-ui/icons/Menu';
 
@@ -235,7 +237,7 @@ class PersistentDrawerLeft extends React.Component {
             </Typography>
            
          <div>
-      <a style={{marginRight:50 , color:"white"}}><span class="glyphicon glyphicon-user"  ></span>{localStorage.getItem("name")}</a>
+      <a style={{marginRight:50 , color:"white"}}><img src={user} style={{height:25,width:25,marginRight:10}} />{localStorage.getItem("name")}</a>
        {/* <img src={localStorage.getItem("photo")} alt="image" style={{height:20 ,width: 20 }} />  */}
        {/* {localStorage.getItem("isLoggedIn")} */}
     </div>

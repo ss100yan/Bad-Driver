@@ -62,7 +62,7 @@ class Comment extends Component {
                 value={this.state.comment}
                 onChange={this.handleInputChange}
                 name="comment"
-                placeholder="Comment"
+                placeholder="Comment (Must be Loged In)"
               />
               <FormBtn
                disabled={!(this.state.user && this.state.comment)}
