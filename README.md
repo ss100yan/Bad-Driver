@@ -1,4 +1,4 @@
-# KASP INC / KASP App
+# KASP INC Project
 
 ## Project 3 - Full Stack Development Program University of Miami 2019
 
