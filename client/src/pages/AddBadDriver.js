@@ -13,6 +13,11 @@ import {
   Redirect,
   withRouter
 } from "react-router-dom";
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { withStyles } from '@material-ui/core/styles';
+import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
 
 
 // function YouTubeGetID(url){
@@ -31,13 +36,7 @@ import {
 
 
 class AddBadDriver extends React.Component {
-
-
-
-
-
-
-  
+ 
   state = {
     books: [],
     user: "",
@@ -138,7 +137,7 @@ class AddBadDriver extends React.Component {
             <Jumbotron>
             
            
-              <h4>login to proceed</h4>
+              {/* <h4>login to proceed</h4> */}
               
             </Jumbotron>
             <form>
@@ -149,24 +148,73 @@ class AddBadDriver extends React.Component {
                 name="user"
                 placeholder="user"
               /> */}
-              <Input
+              <TextField
+          value={this.state.title}
+          onChange={this.handleInputChange}
+          id="standard-full-width"
+          name="title"
+          label="Title"
+          style={{ margin: 8 }}
+          // placeholder="Title (required)"
+          // helperText="Login to proceed"
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            shrink: true,
+            
+          }}
+        />
+              {/* <Input
                 value={this.state.title}
                 onChange={this.handleInputChange}
                 name="title"
                 placeholder="Title (required)"
-              />
-                  <Input
+              /> */}
+                  {/* <Input
               value={this.state.author}
               onChange={this.handleInputChange}
               name="author"
               placeholder="You-tube link (required)"
-            />
-               <Input
+            /> */}
+               <TextField
+          value={this.state.author}
+          onChange={this.handleInputChange}
+          id="standard-full-width"
+          name="author"
+          label="You-tube link"
+          style={{ margin: 8 }}
+          // placeholder=" (required)"
+          // helperText="Login to proceed"
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            shrink: true,
+            
+          }}
+        />
+               {/* <Input
                 value={this.state.plate}
                 onChange={this.handleInputChange }
                 name="plate"
                 placeholder="License Plate "
-              />  
+              />   */}
+
+<TextField
+          value={this.state.plate}
+          onChange={this.handleInputChange}
+          id="standard-full-width"
+          name="plate"
+          label="License Plate"
+          style={{ margin: 8 }}
+          // placeholder="License Plate "
+          // helperText="Login to proceed"
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            shrink: true,
+            
+          }}
+        />
                 {/* <Input
                 value={this.state.location1}
                 onChange={this.handleInputChange}
@@ -180,12 +228,29 @@ class AddBadDriver extends React.Component {
               placeholder="Location -laditude (Optional)"
             /> */}
             
-              <TextArea
+<TextField
+         value={this.state.synopsis}
+          onChange={this.handleInputChange}
+          id="standard-full-width"
+          name="synopsis"
+          label="About"
+          style={{ margin: 8 }}
+          // placeholder="About (Optional)"
+          // helperText="Login to proceed"
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            shrink: true,
+            
+          }}
+        />
+            
+              {/* <TextArea
                 value={this.state.synopsis}
                 onChange={this.handleInputChange}
                 name="synopsis"
                 placeholder="About (Optional)"
-              />
+              /> */}
               <FormBtn
                 disabled={!(localStorage.getItem("name") && this.state.title)}
                 onClick={this.handleFormSubmit }
