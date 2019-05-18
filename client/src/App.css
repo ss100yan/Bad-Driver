@@ -2,6 +2,8 @@ body, html {
     height: 100%;
     }
     .bg {
+
+        /* background-color: rgb(175, 145, 106); */
     background-image: url("http://www.axiz.com/wp-content/uploads/blue-business-background-with-lines_bmofce6g__F0000.png");
     /* -webkit-background-size: cover;
       -moz-background-size: cover;

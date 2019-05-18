@@ -18,6 +18,23 @@ import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+const styles = theme => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+    width: 200,
+  },
+  dense: {
+    marginTop: 19,
+  },
+  menu: {
+    width: 200,
+  },
+});
 
 
 // function YouTubeGetID(url){
@@ -139,16 +156,38 @@ class AddBadDriver extends React.Component {
            
               {/* <h4>login to proceed</h4> */}
               
-            </Jumbotron>
+              </Jumbotron>
             <form>
-        
-            {/* <Input
-                value={this.state.user}
+                 
+              <Input
+                value={this.state.title}
                 onChange={this.handleInputChange}
-                name="user"
-                placeholder="user"
-              /> */}
-              <TextField
+                name="title"
+                placeholder="Title (required)"
+              /> 
+                  <Input
+              value={this.state.author}
+              onChange={this.handleInputChange}
+              name="author"
+              placeholder="You-tube link (required)"
+            /> 
+        
+               <Input
+                value={this.state.plate}
+                onChange={this.handleInputChange }
+                name="plate"
+                placeholder="License Plate "
+              />   
+
+                        
+               <TextArea
+                value={this.state.synopsis}
+                onChange={this.handleInputChange}
+                name="synopsis"
+                placeholder="About (Optional)"
+              /> 
+
+ {/* <TextField
           value={this.state.title}
           onChange={this.handleInputChange}
           id="standard-full-width"
@@ -164,19 +203,7 @@ class AddBadDriver extends React.Component {
             
           }}
         />
-              {/* <Input
-                value={this.state.title}
-                onChange={this.handleInputChange}
-                name="title"
-                placeholder="Title (required)"
-              /> */}
-                  {/* <Input
-              value={this.state.author}
-              onChange={this.handleInputChange}
-              name="author"
-              placeholder="You-tube link (required)"
-            /> */}
-               <TextField
+                   <TextField
           value={this.state.author}
           onChange={this.handleInputChange}
           id="standard-full-width"
@@ -192,14 +219,7 @@ class AddBadDriver extends React.Component {
             
           }}
         />
-               {/* <Input
-                value={this.state.plate}
-                onChange={this.handleInputChange }
-                name="plate"
-                placeholder="License Plate "
-              />   */}
-
-<TextField
+            <TextField
           value={this.state.plate}
           onChange={this.handleInputChange}
           id="standard-full-width"
@@ -215,26 +235,13 @@ class AddBadDriver extends React.Component {
             
           }}
         />
-                {/* <Input
-                value={this.state.location1}
-                onChange={this.handleInputChange}
-                name="location1"
-                placeholder="Location -longtitude (Optional)"
-              />   */}
-              {/* <Input
-              value={this.state.location2}
-              onChange={this.handleInputChange}
-              name="location2"
-              placeholder="Location -laditude (Optional)"
-            /> */}
-            
 <TextField
          value={this.state.synopsis}
           onChange={this.handleInputChange}
           id="standard-full-width"
           name="synopsis"
           // label="About"
-          style={{ margin: 8 }}
+          style={{ margin: 8, }}
           placeholder="About"
           // helperText="Login to proceed"
           fullWidth
@@ -243,21 +250,16 @@ class AddBadDriver extends React.Component {
             shrink: true,
             
           }}
-        />
-            
-              {/* <TextArea
-                value={this.state.synopsis}
-                onChange={this.handleInputChange}
-                name="synopsis"
-                placeholder="About (Optional)"
-              /> */}
+        />  */}
               <FormBtn
                 disabled={!(localStorage.getItem("name") && this.state.title)}
                 onClick={this.handleFormSubmit }
               >
                 Submit 
               </FormBtn>
+           
             </form>
+           
           </Col>
          
          </Row>
@@ -266,4 +268,4 @@ class AddBadDriver extends React.Component {
   }
 }
 
-export default AddBadDriver;
+export default withStyles(styles)(AddBadDriver);
