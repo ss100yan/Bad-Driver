@@ -202,9 +202,9 @@ class Books extends React.Component {
           <Col size="md-1"></Col>
            <Col size="md-3">
             <Jumbotron>
-              <h3>Most popular</h3>
+              <h3 style={{color:'white'}}>Most popular</h3>
             </Jumbotron>
-            <ol>
+            <ol style={{color:'white'}}>
             {this.state.books
             .sort((b, a) => parseFloat(a.thumbsup) - parseFloat(b.thumbsup))
             // .sort(book=>{book.thumbsup})
@@ -212,7 +212,7 @@ class Books extends React.Component {
             
                      
 
-              <li style={{backgroundImage: 'url(' + LP + ')', height:20 ,width: 200 , fontSize: 24, marginTop:20, marginLeft:0, marginBottom:0, paddingTop:30, paddingBottom:54}}><strong style={{color:"", marginLeft:40}}>{book.plate}</strong></li>))}
+              <li style={{backgroundImage: 'url(' + LP + ')', height:20 ,width: 200 , fontSize: 24, marginTop:20, marginLeft:0, marginBottom:0, paddingTop:30, paddingBottom:54}}><strong style={{color:"black", marginLeft:40}}>{book.plate}</strong></li>))}
 
               {/* .sort()
               .map() */}

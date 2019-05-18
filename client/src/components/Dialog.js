@@ -10,11 +10,32 @@ import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
 import chat from "./chat.svg"
 
+
+
+const styles = theme => ({
+  form: {
+    display: 'flex',
+    flexDirection: 'column',
+    margin: 'auto',
+    width: 'fit-content',
+  },
+  formControl: {
+    marginTop: theme.spacing.unit * 2,
+    minWidth: 120,
+  },
+  formControlLabel: {
+    marginTop: theme.spacing.unit,
+  },
+});
+
+
+
 const DialogTitle = withStyles(theme => ({
   root: {
     borderBottom: `1px solid ${theme.palette.divider}`,
     margin: 0,
     padding: theme.spacing.unit * 2,
+    minWidth: 420
   },
   closeButton: {
     position: 'absolute',
@@ -78,7 +99,7 @@ class CustomizedDialogDemo extends React.Component {
           open={this.state.open}
         >
           <DialogTitle id="customized-dialog-title" onClose={this.handleClose}>
-            Comments
+            Comments:
           </DialogTitle>
           <DialogContent>
             <Typography gutterBottom>
@@ -92,7 +113,7 @@ class CustomizedDialogDemo extends React.Component {
                                          )}
             </Typography>
             <Typography gutterBottom>
-          ---------------------------------------------------------------------------------------------------------------------------------
+         
             </Typography>
             <Typography gutterBottom>
             
