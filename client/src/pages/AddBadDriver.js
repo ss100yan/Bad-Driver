@@ -153,9 +153,9 @@ class AddBadDriver extends React.Component {
           onChange={this.handleInputChange}
           id="standard-full-width"
           name="title"
-          label="Title"
+          // label="Title"
           style={{ margin: 8 }}
-          // placeholder="Title (required)"
+          placeholder="Title "
           // helperText="Login to proceed"
           fullWidth
           margin="normal"
@@ -181,9 +181,9 @@ class AddBadDriver extends React.Component {
           onChange={this.handleInputChange}
           id="standard-full-width"
           name="author"
-          label="You-tube link"
-          style={{ margin: 8 }}
-          // placeholder=" (required)"
+          // label="You-tube link"
+          style={{ margin: 8 ,}}
+          placeholder=" You-tube link"
           // helperText="Login to proceed"
           fullWidth
           margin="normal"
@@ -204,9 +204,9 @@ class AddBadDriver extends React.Component {
           onChange={this.handleInputChange}
           id="standard-full-width"
           name="plate"
-          label="License Plate"
+          // label="License Plate"
           style={{ margin: 8 }}
-          // placeholder="License Plate "
+          placeholder="License Plate "
           // helperText="Login to proceed"
           fullWidth
           margin="normal"
@@ -233,9 +233,9 @@ class AddBadDriver extends React.Component {
           onChange={this.handleInputChange}
           id="standard-full-width"
           name="synopsis"
-          label="About"
+          // label="About"
           style={{ margin: 8 }}
-          // placeholder="About (Optional)"
+          placeholder="About"
           // helperText="Login to proceed"
           fullWidth
           margin="normal"
