@@ -10,6 +10,7 @@ import SimpleMap from "../components/Map";
 import LP from "./LP.jpg"
 import chat from "./chat.svg"
 import user from "./user.svg"
+import  CustomizedDialogDemo from "././../components/Dialog"
 
 
 class Books extends React.Component {
@@ -117,6 +118,7 @@ class Books extends React.Component {
         <Row>
          
           <Col size="md-7 sm-12">
+          
             {/* <Jumbotron>
               <h4>Latest additions</h4>
             </Jumbotron> */}
@@ -165,25 +167,26 @@ class Books extends React.Component {
               </FormBtn>
 
               
-                    <a href={"/books/" + book._id} style={{fontWeight: 'bold'}}>Leave a coment</a>
+                    {/* <a href={"/books/" + book._id} style={{fontWeight: 'bold'}}>Leave a coment</a> */}
 
                     {/*DeleteBtn for development use only */}
 
                     <DeleteBtn onClick={() => this.deleteBook(book._id)} />
 
-                    <br></br>
-                          <br></br> <p style={{fontWeight: 'bold'}}>Coments:<img src={chat} style={{height:15,width:15}} /></p>
+                    
+                    <CustomizedDialogDemo comments={book.comments} id={book._id}/>
+                          {/* <br></br> <p style={{fontWeight: 'bold'}}>Coments:<img src={chat} style={{height:15,width:15}} /></p> */}
                           
                            
                                                       
-                                {book.comments.map((number) =>
+                                {/* {book.comments.map((number) =>
                                          
                                          <li style={{
                                         flexDirection: 'column',
                                          backgroundColor: 'grey',
                                          justifyContent: 'center',
                                          alignItems: 'center'}}>{number}</li>
-                                         )}
+                                         )} */}
 
                                    
                   </ListItem>
