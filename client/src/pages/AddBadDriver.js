@@ -18,6 +18,11 @@ import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import  CustomizedDialogDemo from "././../components/Dialog3"
+
+
+
+
 const styles = theme => ({
   container: {
     display: 'flex',
@@ -155,7 +160,7 @@ class AddBadDriver extends React.Component {
             
            
               {/* <h4>login to proceed</h4> */}
-              
+              <div><CustomizedDialogDemo /></div>
               </Jumbotron>
             <form>
                  
