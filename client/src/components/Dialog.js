@@ -9,8 +9,8 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
 import chat from "./chat.svg"
-
-
+import { Input, TextArea, FormBtn } from "../components/Form";
+import API from "../utils/API";
 
 const styles = theme => ({
   form: {
@@ -75,7 +75,32 @@ const DialogActions = withStyles(theme => ({
 class CustomizedDialogDemo extends React.Component {
   state = {
     open: false,
+    book: {},
+    comment:"",
+    user: localStorage.getItem("name")
   };
+  componentDidMount() {
+    API.getBook(this.props.id)
+      .then(res => this.setState({ book: res.data }))
+      .catch(err => console.log(err));
+  }
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+ 
+
+  addComment = id => {
+    let name = localStorage.getItem("name");
+    API.updateBook(id,{$push: {comments: name + "--"+this.state.comment}})
+      .then(res => this.loadBooks())
+      .catch(err => console.log(err));
+  };
+
 
   handleClickOpen = () => {
     this.setState({
@@ -120,11 +145,25 @@ class CustomizedDialogDemo extends React.Component {
             </Typography>
           </DialogContent>
           <DialogActions>
-            <Button 
+         
+             <form>
+              <Input
+                value={this.state.comment}
+                onChange={this.handleInputChange}
+                name="comment"
+                placeholder="Comment (Must be Loged In)"
+              />
+              <FormBtn
+               disabled={!(this.state.user && this.state.comment)}
+                onClick={() => this.addComment(this.props.id)} 
+                > Submit 
+              </FormBtn>
+            </form>
+            {/* <Button 
             // onClick={this.handleClose} 
             color="blue">
               <a href={"/books/" + this.props.id} > Leave a comment</a>
-            </Button>
+            </Button> */}
           </DialogActions>
         </Dialog>
       </div>

@@ -58,7 +58,7 @@ class Comment extends Component {
             </article>
          
             <form>
-              <TextArea
+              <Input
                 value={this.state.comment}
                 onChange={this.handleInputChange}
                 name="comment"
