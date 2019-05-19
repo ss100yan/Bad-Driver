@@ -75,7 +75,7 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import { Home, ExitToApp, GetApp, SettingsPower } from '@material-ui/icons';
 import user from "./user.svg"
-
+import  CustomizedDialogDemo from "../Dialog2"
 // import IconButton from '@material-ui/core/IconButton';
 // import MenuIcon from '@material-ui/icons/Menu';
 
@@ -255,6 +255,7 @@ class PersistentDrawerLeft extends React.Component {
           }}
         >
           <div className={classes.drawerHeader}>
+         <div style={{paddingRight:40}}> <CustomizedDialogDemo /></div>
             <IconButton onClick={this.handleDrawerClose}>
               {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
             </IconButton>
@@ -280,11 +281,12 @@ class PersistentDrawerLeft extends React.Component {
           <Divider />
           <List>
             
-              <ListItem button >
-                <ListItemIcon><ExitToApp /> </ListItemIcon>
+              {/* <ListItem button > */}
+                {/* <ListItemIcon><ExitToApp /> </ListItemIcon> */}
                 {/* <ListItemText Login/> */}
-                <a href="/login"> Login</a>
-              </ListItem>
+                {/* <a href="/login"> Login</a> */}
+               
+              {/* </ListItem> */}
             
               <ListItem button Loguot>
                 <ListItemIcon><SettingsPower /> </ListItemIcon>
@@ -294,7 +296,7 @@ class PersistentDrawerLeft extends React.Component {
        
        
           </List>
-          
+         
         </Drawer>
         <main
           className={classNames(classes.content, {
