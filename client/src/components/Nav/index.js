@@ -76,6 +76,9 @@ import MailIcon from '@material-ui/icons/Mail';
 import { Home, ExitToApp, GetApp, SettingsPower } from '@material-ui/icons';
 import user from "./user.svg"
 import  CustomizedDialogDemo from "../Dialog2"
+import  CustomizedDialogDemo2 from "../Dialog4"
+
+
 // import IconButton from '@material-ui/core/IconButton';
 // import MenuIcon from '@material-ui/icons/Menu';
 
@@ -255,7 +258,10 @@ class PersistentDrawerLeft extends React.Component {
           }}
         >
           <div className={classes.drawerHeader}>
-         <div style={{paddingRight:40}}> <CustomizedDialogDemo /></div>
+          <ListItemIcon ><Home /> </ListItemIcon>
+                {/* <ListItemText primary={text} /> */}
+                <a style={{paddingRight:80}} href="/">Home</a>
+        
             <IconButton onClick={this.handleDrawerClose}>
               {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
             </IconButton>
@@ -263,16 +269,14 @@ class PersistentDrawerLeft extends React.Component {
           <Divider />
           <List>
             
-              <ListItem button >
-                <ListItemIcon><Home /> </ListItemIcon>
-                {/* <ListItemText primary={text} /> */}
-                <a href="/">Home</a>
+              <ListItem button ><ListItemIcon><ExitToApp /> </ListItemIcon>
+              <div style={{paddingRight:20}}> <CustomizedDialogDemo /></div>
               </ListItem>
               <ListItem button >
                 <ListItemIcon> <GetApp /></ListItemIcon>
                 {/* <ListItemText primary={text} /> */}
-                
-                <a class="" href="/add">Add New</a>
+                <div style={{}}> <CustomizedDialogDemo2 /></div>
+                {/* <a class="" href="/add">Add New</a> */}
               </ListItem>
          
            
@@ -287,6 +291,8 @@ class PersistentDrawerLeft extends React.Component {
                 {/* <a href="/login"> Login</a> */}
                
               {/* </ListItem> */}
+
+            
             
               <ListItem button Loguot>
                 <ListItemIcon><SettingsPower /> </ListItemIcon>

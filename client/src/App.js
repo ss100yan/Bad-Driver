@@ -23,10 +23,10 @@ function App() {
         <Switch>
           <Route exact path="/login" component={login} />
           {/* <Route exact path="/logout" component={logout} /> */}
-          <Route exact path="/add" component={AddBadDriver} />
+          {/* <Route exact path="/add" component={AddBadDriver} /> */}
           <Route exact path="/" component={Books} />
-          <Route exact path="/books" component={Books} />
-          <Route exact path="/books/:id" component={Detail} />
+         
+          */}
           <Route component={NoMatch} />
         </Switch>
       </div>
