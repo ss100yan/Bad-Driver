@@ -11,6 +11,9 @@ import Typography from '@material-ui/core/Typography';
 import chat from "./chat.svg"
 import { Input, TextArea, FormBtn } from "../components/Form";
 import API from "../utils/API";
+import Icon from '@material-ui/core/Icon';
+import classNames from 'classnames';
+import { blue } from '@material-ui/core/colors';
 
 const styles = theme => ({
   form: {
@@ -97,7 +100,7 @@ class CustomizedDialogDemo extends React.Component {
   addComment = id => {
     let name = localStorage.getItem("name");
     API.updateBook(id,{$push: {comments: name + "--"+this.state.comment}})
-      .then(res => this.loadBooks())
+      .then(res => this.loadBooks(), window.location = '/')
       .catch(err => console.log(err));
   };
 
@@ -153,17 +156,21 @@ class CustomizedDialogDemo extends React.Component {
                 name="comment"
                 placeholder="Comment (Must be Loged In)"
               />
-              <FormBtn
+              {/* <FormBtn
                disabled={!(this.state.user && this.state.comment)}
                 onClick={() => this.addComment(this.props.id)} 
                 > Submit 
-              </FormBtn>
+              </FormBtn> */}
             </form>
-            {/* <Button 
+            <Button 
             // onClick={this.handleClose} 
-            color="blue">
-              <a href={"/books/" + this.props.id} > Leave a comment</a>
-            </Button> */}
+            disabled={!(this.state.user && this.state.comment)}
+                onClick={() => this.addComment(this.props.id)} 
+          >
+              {/* <a href={"/books/" + this.props.id} > */}
+              <Icon  >send</Icon>
+                 {/* </a> */}
+            </Button>
           </DialogActions>
         </Dialog>
       </div>
