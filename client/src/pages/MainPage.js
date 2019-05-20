@@ -212,7 +212,7 @@ class Books extends React.Component {
             
                      
 
-              <li style={{backgroundImage: 'url(' + LP + ')', height:19 ,width: 169 , fontSize: 24, marginTop:20, marginLeft:0, marginBottom:0, paddingTop:30, paddingBottom:54}}><strong style={{color:"black", marginLeft:40}}>{book.plate}</strong></li>))}
+              <li class="img-thumbnail" style={{backgroundImage: 'url(' + LP + ')', height:19 ,width: 169 , fontSize: 24, marginTop:20, marginLeft:0, marginBottom:0, paddingTop:30, paddingBottom:54}}><strong style={{color:"black", marginLeft:40}}>{book.plate}</strong></li>))}
 
               {/* .sort()
               .map() */}
