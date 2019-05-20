@@ -6,14 +6,14 @@ body, html {
 
         /* background-color:rgb(49, 49, 110); */
     background-image: url("http://www.axiz.com/wp-content/uploads/blue-business-background-with-lines_bmofce6g__F0000.png");
-    /* -webkit-background-size: cover;
+    -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
-      background-size: cover; */
-    height: 120vh;
-    background-position: center;
+      background-size: cover;
+    /* height: 120vh; */
+    /* background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
     }
 
     
