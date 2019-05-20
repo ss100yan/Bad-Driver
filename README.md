@@ -59,9 +59,9 @@ YouTube API: for information including geolocation.
 
 ## Contributions
 
-Back End: React, MongoDB Database with a Mongoose ORM. API calls and HTML routes (GET and POST), Mongoose configuration and Handlebars scripts. Heroku deployment with data.
+Back End: Express, NodeJs, MongoDB Database with a Mongoose ORM. API calls and HTML routes (GET and POST), Mongoose configuration scripts. Heroku deployment with data.
 
-Front End: Main page and Templates styling and design, configuration and scripts.
+Front End: React, Matiril UI, React Bootstrap styling and design, configuration and scripts.
 
 ## Copyright
 Stoyan Shivarov, Armando Diaz, Kayla Gilchrist and Paresh Bhatti
