@@ -204,7 +204,7 @@ class Books extends React.Component {
             <Jumbotron>
               <h3 style={{color:'white'}}>Most popular</h3>
             </Jumbotron>
-            <ol style={{color:'white' }}>
+            <ol style={{color:'white' ,paddingLeft:65}}>
             {this.state.books
             .sort((b, a) => parseFloat(a.thumbsup) - parseFloat(b.thumbsup))
             // .sort(book=>{book.thumbsup})

@@ -100,7 +100,9 @@ class CustomizedDialogDemo extends React.Component {
   addComment = id => {
     let name = localStorage.getItem("name");
     API.updateBook(id,{$push: {comments: name + "--"+this.state.comment}})
-      .then(res => this.loadBooks(), window.location = '/')
+      .then(res => this.loadBooks(), 
+      window.location = '/'
+      )
       .catch(err => console.log(err));
   };
 

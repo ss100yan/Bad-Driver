@@ -49,13 +49,13 @@ Future add-ons will enable publishing by simply taking a picture or via talk-to-
 
 ## Technology Utilized
 
-HTML, CSS, JavaScript, Material UI, OAuth, Mongoose, MongoDB, NodeJS, Express, Axios, Heroku.
+React, NodeJS, Express, JavaScript, Mongoose, MongoDB, CSS, Material UI, OAuth,  Axios, Heroku.
  
 
 ### API Reference
 
 Google Maps API: Add simple, embeddable map images to your website with minimal code. 
-YouTube API: for information including geolocation..
+YouTube API: for information including geolocation.
 
 ## Contributions
 

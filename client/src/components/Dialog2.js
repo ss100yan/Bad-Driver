@@ -41,7 +41,7 @@ const DialogTitle = withStyles(theme => ({
     borderBottom: `1px solid ${theme.palette.divider}`,
     margin: 0,
     padding: theme.spacing.unit * 2,
-    minWidth: 250,
+    minWidth: 275,
     
   },
   closeButton: {
@@ -182,7 +182,7 @@ class CustomizedDialogDemo extends React.Component {
 
 
 
-<div style={{paddingTop:70, paddingBottom:20}}>
+<div style={{paddingTop:70, paddingBottom:0}}>
 <FacebookLogin
     appId="374590499934008"
     autoLoad={false}
