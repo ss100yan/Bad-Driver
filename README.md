@@ -29,7 +29,17 @@
 
 We designed an application to enable drivers to publish their dash-cam videos via YouTube to our database. 
 Logged-in users can post, rate and comment on various drivers in their community to enable safer driving for everyone. 
-Future add-ons will enable publishing by simply taking a picture or via talk-to-text features. 
+Future add-ons will enable publishing by simply taking a picture or via talk-to-text features.
+
+### Possible App uses
+
+- Car rental agencies
+- Insurancies agencies
+- Police departments (to possibly aid in investigations)
+- Highway patrol officers
+- Car financing companies
+- Transportion Industry (Uber, cab companies, trucking companies, etc.) 
+
 
 ### Key Elements and Features
 
