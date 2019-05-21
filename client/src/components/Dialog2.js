@@ -107,6 +107,8 @@ class CustomizedDialogDemo extends React.Component {
         const FbImmage = response.picture;
         const FbEmail = response.email;
         console.log(FbName);
+        console.log(FbImmage);
+        console.log(FbEmail);
         localStorage.setItem("name", FbName)
         localStorage.setItem("photo", FbImmage)
         localStorage.setItem("email", FbEmail)
@@ -159,11 +161,11 @@ class CustomizedDialogDemo extends React.Component {
         <GoogleLogin
 
         // for local host
-  // clientId= "919709182816-2hg84lnsgi74a4stbp4657ofr7a2keq9.apps.googleusercontent.com"
+  clientId= "919709182816-2hg84lnsgi74a4stbp4657ofr7a2keq9.apps.googleusercontent.com"
 
     // for heroku
     
-  clientId= "919709182816-ep64esfta7208lf1qmlcrl3aoiftjq63.apps.googleusercontent.com"
+  // clientId= "919709182816-ep64esfta7208lf1qmlcrl3aoiftjq63.apps.googleusercontent.com"
   buttonText="Login with Google"
  
   onSuccess={responseGoogle}

@@ -158,7 +158,7 @@ class CustomizedDialogDemo2 extends React.Component {
         user: localStorage.getItem("name"),
         author: this.state.author.replace("watch?v=", "embed/"),
         synopsis: this.state.synopsis,
-        plate: this.state.plate,
+        plate: this.state.plate.toUpperCase(),
         location1:this.state.location1,
         location2: this.state.location2,
         thumbsup: this.state.thumbsup,
@@ -220,21 +220,22 @@ class CustomizedDialogDemo2 extends React.Component {
               name="author"
               placeholder="You-tube link (required)"
             /> 
-        
+  
                <Input
-                value={this.state.plate}
+                value={this.state.plate.toUpperCase()}
                 onChange={this.handleInputChange }
                 name="plate"
                 placeholder="License Plate "
+                maxLength={6}
               />   
 
                         
-               <TextArea
+               {/* <TextArea
                 value={this.state.synopsis}
                 onChange={this.handleInputChange}
                 name="synopsis"
                 placeholder="About (Optional)"
-              /> 
+              />  */}
 
  {/* <TextField
           value={this.state.title}

@@ -6,14 +6,14 @@ const bookSchema = new Schema({
   title: { type: String, required: true },
   author: { type: String, required: true },
   synopsis: String,
-  plate: String,
+  plate: {type: String, maxlength:6},
   location1: String,
   location2: String,
   addres:String,
   photo:String,
   thumbsup:Number,
   thumbsdown: Number,
-  comments:[String],
+  comments:[Object],
   thumbsUpDownEmail:[String],
   date: { type: Date, default: Date.now }
 });

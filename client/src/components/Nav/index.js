@@ -1,56 +1,4 @@
-// import React from "react";
-// import login from "../../pages/login";
-// import GoogleLogin from 'react-google-login';
-// import { GoogleLogout } from 'react-google-login';
 
-
-
-
-
-// function Nav() {
-
-//   function handleClick(e) {
-//     e.preventDefault();
-//     console.log('The link was clicked.');
-//     localStorage.clear()
-//       window.location = '/'
-    
-//   }
-
-//   // state={
-//   //   hideLogin:false,
-//   //   hideLogout:true
-//   // };
- 
-//   return (
-
-//     <nav class="navbar navbar-inverse navbar-dark bg-dark ">
-//   <div class="container-fluid">
-//     <div class="navbar-header">
-//       <a class="navbar-brand" href="/">SFL Bad drivers</a>
-//     </div>
-//     <ul class="nav navbar-nav">
-//       <li class="active"><a href="/">Home</a></li>
-//       <li class="dropdown">
-//       <a class="" href="/add">Add New</a>
-       
-//       </li>
-//       {/* <li><a href="#">Page 2</a></li> */}
-//     </ul>
-//     <ul class="nav navbar-nav navbar-right">
-//       <li><a><span class="glyphicon glyphicon-user"></span>{localStorage.getItem("name")}</a></li>
-//       {/* <img src={localStorage.getItem("photo")} alt="image" style={{height:20 ,width: 20 }} />  */}
-//       {/* {localStorage.getItem("isLoggedIn")} */}
-//       <li style={{visibility: "visible"}}><a href="#" onClick={handleClick}  ><span class="glyphicon glyphicon-log-out" ></span> Logout</a></li>
-//       <li style={{visibility: "visible" }}><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      
-//     </ul>
-//   </div>
-// </nav>
-//   );
-// }
-
-// export default Nav;
 
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -78,60 +26,6 @@ import user from "./user.svg"
 import  CustomizedDialogDemo from "../Dialog2"
 import  CustomizedDialogDemo2 from "../Dialog4"
 
-
-// import IconButton from '@material-ui/core/IconButton';
-// import MenuIcon from '@material-ui/icons/Menu';
-
-// const styles = {
-//   root: {
-//     flexGrow: 1,
-//   },
-//   grow: {
-//     flexGrow: 1,
-//   },
-//   menuButton: {
-//     marginLeft: -12,
-//     marginRight: 20,
-//   },
-// };
-
-
-
-//   function handleClick(e) {
-//     e.preventDefault();
-//     console.log('The link was clicked.');
-//     localStorage.clear()
-//       window.location = '/'
-    
-//   }
-
-// function ButtonAppBar(props) {
-//   const { classes } = props;
-//   return (
-//     <div className={classes.root}>
-//       <AppBar position="static">
-//         <Toolbar>
-//           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-//             <MenuIcon />
-//           </IconButton>
-//           <Typography variant="h6" color="inherit" className={classes.grow}>
-//           SFL Bad drivers
-//           <a href="/">Home</a>
-//           </Typography>
-//           <a><span class="glyphicon glyphicon-user"></span>{localStorage.getItem("name")}</a>
-//           <Button color="inherit"><a href="#" onClick={handleClick}  ><span class="glyphicon glyphicon-log-out" ></span> Logout</a></Button>
-//           <Button color="inherit"><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></Button>
-//         </Toolbar>
-//       </AppBar>
-//     </div>
-//   );
-// }
-
-// ButtonAppBar.propTypes = {
-//   classes: PropTypes.object.isRequired,
-// };
-
-// export default withStyles(styles)(ButtonAppBar);
 
   function handleClick(e) {
      e.preventDefault();
@@ -243,7 +137,7 @@ class PersistentDrawerLeft extends React.Component {
            
          <div>
       <a style={{marginRight:50 , color:"white"}}><img src={user} style={{height:25,width:25,marginRight:10}} />{localStorage.getItem("name")}</a>
-       {/* <img src={localStorage.getItem("photo")} alt="image" style={{height:20 ,width: 20 }} />  */}
+      
        {/* {localStorage.getItem("isLoggedIn")} */}
     </div>
           </Toolbar>
@@ -258,7 +152,10 @@ class PersistentDrawerLeft extends React.Component {
           }}
         >
           <div className={classes.drawerHeader}>
+          {/* <img src={localStorage.getItem("photo")} alt="image" style={{height:20 ,width: 20 }} /> 
+          {console.log(localStorage.getItem("photo"))} */}
           <ListItemIcon ><Home /> </ListItemIcon>
+
                 {/* <ListItemText primary={text} /> */}
                 <a style={{paddingRight:80}} href="/">Home</a>
         
