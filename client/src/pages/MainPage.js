@@ -100,7 +100,7 @@ class Books extends React.Component {
         title: this.state.title,
         user: localStorage.getItem("name"),
         author: this.state.author,
-        synopsis: this.state.synopsis,
+        synopsis: localStorage.getItem("photo"),
         plate: this.state.plate,
         location1: this.state.location1,
         location2: this.state.location2,
@@ -130,7 +130,7 @@ class Books extends React.Component {
 
                     <Link to={"/books/" + book._id}>
 
-                    <p><img src={user} style={{height:25,width:25}} />    <spsm>{book.user}</spsm></p>
+                    <p><img src={book.synopsis} style={{height:25,width:25}} />    <spsm>{book.user}</spsm></p>
 
                     <p>License Plate:<spam  >{book.plate}</spam></p>
                     

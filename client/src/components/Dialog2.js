@@ -104,7 +104,7 @@ class CustomizedDialogDemo extends React.Component {
         console.log(response);
        
         const FbName = response.name;
-        const FbImmage = response.picture;
+        const FbImmage = response.picture.data.url;
         const FbEmail = response.email;
         console.log(FbName);
         console.log(FbImmage);

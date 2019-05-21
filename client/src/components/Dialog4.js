@@ -157,7 +157,7 @@ class CustomizedDialogDemo2 extends React.Component {
         title: this.state.title,
         user: localStorage.getItem("name"),
         author: this.state.author.replace("watch?v=", "embed/"),
-        synopsis: this.state.synopsis,
+        synopsis: localStorage.getItem("photo"),
         plate: this.state.plate.toUpperCase(),
         location1:this.state.location1,
         location2: this.state.location2,
