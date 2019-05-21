@@ -79,7 +79,7 @@ class CustomizedDialogDemo extends React.Component {
   state = {
     open: false,
     book: {},
-    comments:[],
+    comments:[""],
     comment:"",
     user: localStorage.getItem("name")
   };
@@ -102,7 +102,8 @@ class CustomizedDialogDemo extends React.Component {
 
   addComment = id => {
     let name = localStorage.getItem("name");
-    API.updateBook(id,{$push: {comments: name + "--"+this.state.comment}})
+    // {$push: {friends: {firstName: "Harry", lastName: "Potter"}}});
+    API.updateBook(id,{$push: {comments:{comments: "--"+this.state.comment ,photo: localStorage.getItem("photo"),name:  "--"+localStorage.getItem("name")}}})
       .then(res => this.componentDidMount(), 
       // window.location = '/'
       )
@@ -145,14 +146,17 @@ class CustomizedDialogDemo extends React.Component {
             .map((number) =>
                                          
                                          <li 
-                                         style={{
-                                        flexDirection: 'column',
-                                         backgroundColor: '',
-                                         justifyContent: 'center',
-                                         alignItems: 'center'}}
+                                        //  style={{
+                                        // flexDirection: 'column',
+                                        //  backgroundColor: '',
+                                        //  justifyContent: 'center',
+                                        //  alignItems: 'center'}}
                                          
-                                         >{number}</li>
+                                         ><img class="img-circle" src={number.photo} style={{height:25,width:25}} />{number.name}<strong>{number.comments}</strong></li>
                                          )}</ul>
+                                      {/* <spam>{this.state.comments[0].name}</spam> */}
+
+                      { console.log(this.state.comments) }                 
             </Typography>
             <Typography gutterBottom>
 

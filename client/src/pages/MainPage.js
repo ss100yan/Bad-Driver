@@ -130,7 +130,7 @@ class Books extends React.Component {
 
                     <Link to={"/books/" + book._id}>
 
-                    <p><img src={book.synopsis} style={{height:25,width:25}} />    <spsm>{book.user}</spsm></p>
+                    <p><img class="img-circle" src={book.synopsis} style={{height:25,width:25}} />    <spsm>{book.user}</spsm></p>
 
                     <p>License Plate:<spam  >{book.plate}</spam></p>
                     
