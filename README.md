@@ -29,7 +29,17 @@
 
 We designed an application to enable drivers to publish their dash-cam videos via YouTube to our database. 
 Logged-in users can post, rate and comment on various drivers in their community to enable safer driving for everyone. 
-Future add-ons will enable publishing by simply taking a picture or via talk-to-text features. 
+Future add-ons will enable publishing by simply taking a picture or via talk-to-text features.
+
+### Possible App uses
+
+- Car rental agencies
+- Insurancies agencies
+- Police departments (to possibly aid in investigations)
+- Highway patrol officers
+- Car financing companies
+- Transportion Industry (Uber, cab companies, trucking companies, etc.) 
+
 
 ### Key Elements and Features
 
@@ -54,14 +64,15 @@ React, NodeJS, Express, JavaScript, Mongoose, MongoDB, CSS, Material UI, OAuth, 
 
 ### API Reference
 
-Google Maps API: Add simple, embeddable map images to your website with minimal code. 
+Google Maps API: Add simple, embeddable map images to your website with minimal code.
+
 YouTube API: for information including geolocation.
 
 ## Contributions
 
 Back End: Express, NodeJs, MongoDB Database with a Mongoose ORM. API calls and HTML routes (GET and POST), Mongoose configuration scripts. Heroku deployment with data.
 
-Front End: React, Matiril UI, React Bootstrap styling and design, configuration and scripts.
+Front End: React, Material UI, React Bootstrap styling and design, configuration and scripts.
 
 ## Copyright
 Stoyan Shivarov, Armando Diaz, Kayla Gilchrist and Paresh Bhatti
