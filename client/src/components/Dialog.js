@@ -80,11 +80,12 @@ class CustomizedDialogDemo extends React.Component {
     open: false,
     book: {},
     comments:[],
+    comment:"",
     user: localStorage.getItem("name")
   };
   componentDidMount() {
     API.getBook(this.props.id)
-      .then(res => this.setState({ comments: res.data.comments }))
+      .then(res => this.setState({ comments: res.data.comments, comment: "" }))
      
      
       .catch(err => console.log(err));
@@ -120,7 +121,9 @@ class CustomizedDialogDemo extends React.Component {
   };
 
   render() {
+    
     return (
+      
       <div>
         <Button variant="outlined" color="blue" onClick={this.handleClickOpen}>
         Coments:<img src={chat} style={{height:15,width:15}} />
@@ -165,6 +168,7 @@ class CustomizedDialogDemo extends React.Component {
           <DialogActions>
          
              <form>
+               
               <Input
                 value={this.state.comment}
                 onChange={this.handleInputChange}
@@ -174,13 +178,14 @@ class CustomizedDialogDemo extends React.Component {
               {/* <FormBtn
                disabled={!(this.state.user && this.state.comment)}
                 onClick={() => this.addComment(this.props.id)} 
-                > Submit 
+                > <Icon  >send</Icon>
               </FormBtn> */}
             </form>
             <Button 
             // onClick={this.handleClose} 
             disabled={!(this.state.user && this.state.comment)}
                 onClick={() => this.addComment(this.props.id)} 
+               
           >
               {/* <a href={"/books/" + this.props.id} > */}
               <Icon  >send</Icon>
