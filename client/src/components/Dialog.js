@@ -79,12 +79,14 @@ class CustomizedDialogDemo extends React.Component {
   state = {
     open: false,
     book: {},
-    comment:"",
+    comments:[],
     user: localStorage.getItem("name")
   };
   componentDidMount() {
     API.getBook(this.props.id)
-      .then(res => this.setState({ book: res.data }))
+      .then(res => this.setState({ comments: res.data.comments }))
+     
+     
       .catch(err => console.log(err));
   }
 
@@ -100,8 +102,8 @@ class CustomizedDialogDemo extends React.Component {
   addComment = id => {
     let name = localStorage.getItem("name");
     API.updateBook(id,{$push: {comments: name + "--"+this.state.comment}})
-      .then(res => this.loadBooks(), 
-      window.location = '/'
+      .then(res => this.componentDidMount(), 
+      // window.location = '/'
       )
       .catch(err => console.log(err));
   };
@@ -133,18 +135,29 @@ class CustomizedDialogDemo extends React.Component {
           </DialogTitle>
           <DialogContent>
             <Typography gutterBottom>
-            {this.props.comments.map((number) =>
+           <ul> {
+          
+              // this.props.comments
+             this.state.comments
+            .map((number) =>
                                          
-                                         <li style={{
+                                         <li 
+                                         style={{
                                         flexDirection: 'column',
                                          backgroundColor: '',
                                          justifyContent: 'center',
-                                         alignItems: 'center'}}>{number}</li>
-                                         )}
+                                         alignItems: 'center'}}
+                                         
+                                         >{number}</li>
+                                         )}</ul>
             </Typography>
             <Typography gutterBottom>
-         
+
+
+       {/* <div>{this.props.comments}</div>   */}
+       <div>{this.state.book.comments}. </div> 
             </Typography>
+
             <Typography gutterBottom>
             
             </Typography>

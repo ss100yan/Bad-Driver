@@ -174,7 +174,9 @@ class Books extends React.Component {
                     {/* <DeleteBtn onClick={() => this.deleteBook(book._id)} /> */}
 
                     
-                    <CustomizedDialogDemo comments={book.comments} id={book._id}/>
+                    <CustomizedDialogDemo
+                     comments={book.comments}
+                      id={book._id}/>
                           {/* <br></br> <p style={{fontWeight: 'bold'}}>Coments:<img src={chat} style={{height:15,width:15}} /></p> */}
                           
                            
