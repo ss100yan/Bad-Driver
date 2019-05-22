@@ -128,7 +128,7 @@ class Books extends React.Component {
 
                   <ListItem key={book._id}>
 
-                    <Link to={"/books/" + book._id}>
+                    {/* <Link to={"/books/" + book._id}> */}
 
                     <p><img class="img-circle" src={book.synopsis} style={{height:25,width:25}} />    <spsm>{book.user}</spsm></p>
 
@@ -148,7 +148,7 @@ class Books extends React.Component {
 
                      
            
-                    </Link>
+                    {/* </Link> */}
                     
                     <br/>
 
