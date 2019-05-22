@@ -1,9 +1,10 @@
 body, html {
 
-  background: url("http://www.axiz.com/wp-content/uploads/blue-business-background-with-lines_bmofce6g__F0000.png") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  background: url("blue.png");
+
+  background-size: cover;
+  background-size: cover;
+  background-size: cover;
   background-size: cover;
 
 
