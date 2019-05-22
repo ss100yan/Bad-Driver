@@ -50,8 +50,8 @@ Future add-ons will enable publishing by simply taking a picture or via talk-to-
 - Optional input form for adding to the database
 
 
-![gif of app flow](https://github.com/ss100yan/Bad-Driver/blob/master/client/public/SystemDesign.png/)
-![app flow 2](https://github.com/ss100yan/Bad-Driver/blob/master/client/public/Bad-Driver.png/) 
+![gif of app flow](https://github.com/ss100yan/Bad-Driver/blob/master/client/public/system%20design.jpg/)
+![app flow 2](https://github.com/ss100yan/Bad-Driver/blob/master/client/public/Object%20Design.jpg/) 
 
 ### Motivation
 - Safer driving in our community
