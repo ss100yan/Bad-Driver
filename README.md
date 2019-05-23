@@ -1,4 +1,4 @@
-# KASP INC Project
+# KASP INC ![picture](https://github.com/ss100yan/Bad-Driver/blob/master/client/public/Free_Sample_By_Wix.jpg/)
 
 ## Project 3 - Full Stack Development Program University of Miami 2019
 
@@ -76,5 +76,4 @@ Front End: React, Redux, Material UI, React Bootstrap styling and design, config
 
 ## Copyright
 Stoyan Shivarov, Armando Diaz, Kayla Gilchrist and Paresh Bhatti
-
-© 2019 All Rights Reserved
+![picture](https://github.com/ss100yan/Bad-Driver/blob/master/client/public/Free_Sample_By_Wix.jpg/)© 2019 All Rights Reserved
