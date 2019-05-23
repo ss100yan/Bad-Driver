@@ -25,7 +25,7 @@ import { Home, ExitToApp, GetApp, SettingsPower } from '@material-ui/icons';
 import user from "./user.svg"
 import  CustomizedDialogDemo from "../Dialog2"
 import  CustomizedDialogDemo2 from "../Dialog4"
-
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 
   function handleClick(e) {
      e.preventDefault();
@@ -142,6 +142,7 @@ class PersistentDrawerLeft extends React.Component {
     </div>
           </Toolbar>
         </AppBar>
+        <ClickAwayListener onClickAway={this.handleDrawerClose}>
         <Drawer
           className={classes.drawer}
           variant="persistent"
@@ -179,8 +180,9 @@ class PersistentDrawerLeft extends React.Component {
            
     
           </List>
-          <Divider />
-          <List>
+         
+          <Divider  />
+          <List >
             
               {/* <ListItem button > */}
                 {/* <ListItemIcon><ExitToApp /> </ListItemIcon> */}
@@ -191,7 +193,7 @@ class PersistentDrawerLeft extends React.Component {
 
             
             
-              <ListItem button Loguot>
+              <ListItem button Loguot >
                 <ListItemIcon><SettingsPower /> </ListItemIcon>
                 {/* <ListItemText Login/> */}
                 <li><a href="#" onClick={handleClick}  > Logout</a></li>
@@ -201,18 +203,19 @@ class PersistentDrawerLeft extends React.Component {
           </List>
          
         </Drawer>
+        </ClickAwayListener>
         <main
           className={classNames(classes.content, {
             [classes.contentShift]: open,
           })}
         >
           <div className={classes.drawerHeader} />
-          <Typography paragraph>
+          {/* <Typography paragraph>
           
           </Typography>
           <Typography paragraph>
          
-          </Typography>
+          </Typography> */}
         </main>
       </div>
     );

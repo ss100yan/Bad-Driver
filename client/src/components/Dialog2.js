@@ -17,6 +17,11 @@ import GoogleLogin from 'react-google-login';
 import { Col, Row, Container } from "../components/Grid";
 import { GoogleLogout } from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
+import {Provider} from 'react-redux';
+import {createStore, applyMiddleware} from "redux";
+import store from "./store"
+
+
 
 const styles = theme => ({
   form: {
@@ -100,6 +105,8 @@ class CustomizedDialogDemo extends React.Component {
   };
 
   render() {
+ 
+  
     const responseFacebook = (response) => {
         console.log(response);
        
@@ -140,7 +147,7 @@ class CustomizedDialogDemo extends React.Component {
         window.location = '/' 
        }
        localStorage.getItem("name")
-    return (
+    return ( <Provider store={store}>
       <div>
         <Button variant="outlined" color="blue" onClick={this.handleClickOpen}>
         Log in
@@ -220,7 +227,7 @@ class CustomizedDialogDemo extends React.Component {
         </Dialog>
         
       </div>
-      
+      </Provider>
     );
   }
 }
