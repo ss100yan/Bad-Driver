@@ -21,9 +21,10 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
-import { Home, ExitToApp, GetApp, SettingsPower } from '@material-ui/icons';
+import { Home, ExitToApp, GetApp, SettingsPower,Info,Publish } from '@material-ui/icons';
 import user from "./user.svg"
 import  CustomizedDialogDemo from "../Dialog2"
+import  CustomizedDialogDemo3 from "../Dialog3"
 import  CustomizedDialogDemo2 from "../Dialog4"
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 
@@ -153,25 +154,32 @@ class PersistentDrawerLeft extends React.Component {
           }}
         >
           <div className={classes.drawerHeader}>
-          {/* <img src={localStorage.getItem("photo")} alt="image" style={{height:20 ,width: 20 }} /> 
-          {console.log(localStorage.getItem("photo"))} */}
-          <ListItemIcon ><Home /> </ListItemIcon>
-
-                {/* <ListItemText primary={text} /> */}
-                <a style={{paddingRight:80}} href="/">Home</a>
+           {/* <img src={localStorage.getItem("photo")} alt="image" style={{height:20 ,width: 20 }} />  */}
+          {/* {console.log(localStorage.getItem("photo"))} 
+           */}
         
             <IconButton onClick={this.handleDrawerClose}>
               {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
             </IconButton>
           </div>
           <Divider />
-          <List>
-            
+        
+         
+
+          <ListItem button ><ListItemIcon ><Home /> </ListItemIcon>
+
+                 {/* <ListItemText primary={text} /> */}
+                  <a style={{}} href="/">Home</a>
+                  </ListItem>
+                  <Divider />
               <ListItem button ><ListItemIcon><ExitToApp /> </ListItemIcon>
               <div style={{paddingRight:20}}> <CustomizedDialogDemo /></div>
               </ListItem>
+
+              <Divider />
+
               <ListItem button >
-                <ListItemIcon> <GetApp /></ListItemIcon>
+                <ListItemIcon> <Publish /></ListItemIcon>
                 {/* <ListItemText primary={text} /> */}
                 <div style={{}}> <CustomizedDialogDemo2 /></div>
                 {/* <a class="" href="/add">Add New</a> */}
@@ -179,28 +187,26 @@ class PersistentDrawerLeft extends React.Component {
          
            
     
-          </List>
          
           <Divider  />
-          <List >
-            
-              {/* <ListItem button > */}
-                {/* <ListItemIcon><ExitToApp /> </ListItemIcon> */}
-                {/* <ListItemText Login/> */}
-                {/* <a href="/login"> Login</a> */}
-               
-              {/* </ListItem> */}
 
-            
+          <ListItem button >
+                <ListItemIcon> <Info /></ListItemIcon>
+                {/* <ListItemText primary={text} /> */}
+                <div style={{}}> <CustomizedDialogDemo3 /></div>
+                {/* <a class="" href="/add">Add New</a> */}
+              </ListItem>
+        
+         <Divider  />                     
             
               <ListItem button Loguot >
                 <ListItemIcon><SettingsPower /> </ListItemIcon>
                 {/* <ListItemText Login/> */}
-                <li><a href="#" onClick={handleClick}  > Logout</a></li>
+                <a href="#" onClick={handleClick}> Sign Out</a>
               </ListItem>
        
        
-          </List>
+        
          
         </Drawer>
         </ClickAwayListener>

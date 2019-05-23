@@ -149,9 +149,9 @@ class CustomizedDialogDemo extends React.Component {
        localStorage.getItem("name")
     return ( <Provider store={store}>
       <div>
-        <Button variant="outlined" color="blue" onClick={this.handleClickOpen}>
+        <a variant="outlined" color="blue" onClick={this.handleClickOpen}>
         Log in
-        </Button>
+        </a>
         <Dialog
           onClose={this.handleClose}
           aria-labelledby="customized-dialog-title"

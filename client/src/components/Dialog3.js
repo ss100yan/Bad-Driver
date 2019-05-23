@@ -105,9 +105,9 @@ class CustomizedDialogDemo extends React.Component {
       
     return (
       <div>
-        <Button variant="outlined" color="blue" onClick={this.handleClickOpen}>
-        Help
-        </Button>
+        <a variant="outlined" color="blue" onClick={this.handleClickOpen}>
+        About
+        </a>
         <Dialog
           onClose={this.handleClose}
           aria-labelledby="customized-dialog-title"

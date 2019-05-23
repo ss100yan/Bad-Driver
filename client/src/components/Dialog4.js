@@ -14,6 +14,8 @@ import classNames from 'classnames';
 import { blue } from '@material-ui/core/colors';
 import { Col, Row, Container } from "../components/Grid";
 import API from "../utils/API";
+import { Link } from "react-router-dom";
+
 const styles = theme => ({
   form: {
     display: 'flex',
@@ -188,9 +190,9 @@ class CustomizedDialogDemo2 extends React.Component {
       
     return (
       <div>
-        <Button variant="outlined" color="blue" onClick={this.handleClickOpen}>
+        <a variant="outlined" color="blue" onClick={this.handleClickOpen}>
         Add
-        </Button>
+        </a>
         <Dialog
           onClose={this.handleClose}
           aria-labelledby="customized-dialog-title"
