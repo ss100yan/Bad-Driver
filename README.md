@@ -1,4 +1,4 @@
-# KASP INC ![picture](https://github.com/ss100yan/Bad-Driver/blob/master/client/public/Free_Sample_By_Wix.jpg/)
+# ![picture](https://github.com/ss100yan/Bad-Driver/blob/master/client/public/Free_Sample_By_Wix.jpg/)
 
 ## Project 3 - Full Stack Development Program University of Miami 2019
 
