@@ -125,7 +125,9 @@ class CustomizedDialogDemo extends React.Component {
             
             </Typography>
             <Typography gutterBottom>
-         
+            <h1 style={{color:"blue"}}>KASP INC.</h1>
+            <h6>&copy;KASP INC. 2019</h6>
+            <a href = "mailto: ss100yan@gmail.com">Send Email</a>
             </Typography>
             <Typography gutterBottom>
             
