@@ -59,7 +59,7 @@ Future add-ons will enable publishing by simply taking a picture or via talk-to-
 
 ## Technology Utilized
 
-React, NodeJS, Express, JavaScript, Mongoose, MongoDB, CSS, Material UI, OAuth,  Axios, Heroku.
+React, NodeJS, Express, JavaScript, Mongoose, MongoDB, Redux, CSS, Material UI, OAuth,  Axios, Heroku.
  
 
 ### API Reference
@@ -72,7 +72,7 @@ YouTube API: for information including geolocation.
 
 Back End: Express, NodeJs, MongoDB Database with a Mongoose ORM. API calls and HTML routes (GET and POST), Mongoose configuration scripts. Heroku deployment with data.
 
-Front End: React, Material UI, React Bootstrap styling and design, configuration and scripts.
+Front End: React, Redux, Material UI, React Bootstrap styling and design, configuration and scripts.
 
 ## Copyright
 Stoyan Shivarov, Armando Diaz, Kayla Gilchrist and Paresh Bhatti
