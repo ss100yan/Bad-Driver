@@ -17,7 +17,7 @@ import GoogleLogin from 'react-google-login';
 import { Col, Row, Container } from "../components/Grid";
 import { GoogleLogout } from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
-
+import Logo from "./Logo.jpg"
 const styles = theme => ({
   form: {
     display: 'flex',
@@ -125,7 +125,8 @@ class CustomizedDialogDemo extends React.Component {
             
             </Typography>
             <Typography gutterBottom>
-            <h1 style={{color:"blue"}}>KASP INC.</h1>
+            {/* <h1 style={{color:"blue"}}>KASP INC.</h1> */}
+            <img  src={Logo} style={{height:150,width:150}} />
             <h6>&copy;KASP INC. 2019</h6>
             <a href = "mailto: ss100yan@gmail.com">Send Email</a>
             </Typography>
