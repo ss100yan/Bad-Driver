@@ -2,7 +2,7 @@
 
 ## Project 3 - Full Stack Development Program University of Miami 2019
 
-# Heroku https://south-florida-worst-drivers.herokuapp.com/
+### Heroku https://south-florida-worst-drivers.herokuapp.com/
 
 ## Getting Started
 
