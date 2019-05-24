@@ -9,20 +9,15 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
 import chat from "./chat.svg"
-import { Input, TextArea, FormBtn } from "../components/Form";
+import { Input, TextArea, FormBtn } from "./Form";
 import Icon from '@material-ui/core/Icon';
 import classNames from 'classnames';
 import { blue } from '@material-ui/core/colors';
 import GoogleLogin from 'react-google-login';
-import { Col, Row, Container } from "../components/Grid";
+import { Col, Row, Container } from "./Grid";
 import { GoogleLogout } from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
-import {Provider} from 'react-redux';
-import {createStore, applyMiddleware} from "redux";
-import store from "./store"
-
-
-
+import Logo from "./Logo.jpg"
 const styles = theme => ({
   form: {
     display: 'flex',
@@ -46,7 +41,7 @@ const DialogTitle = withStyles(theme => ({
     borderBottom: `1px solid ${theme.palette.divider}`,
     margin: 0,
     padding: theme.spacing.unit * 2,
-    minWidth: 275,
+    minWidth: 250,
     
   },
   closeButton: {
@@ -105,52 +100,13 @@ class CustomizedDialogDemo extends React.Component {
   };
 
   render() {
- 
-  
-    const responseFacebook = (response) => {
-        console.log(response);
-       
-        const FbName = response.name;
-        const FbImmage = response.picture.data.url;
-        const FbEmail = response.email;
-        console.log(FbName);
-        console.log(FbImmage);
-        console.log(FbEmail);
-        localStorage.setItem("name", FbName)
-        localStorage.setItem("photo", FbImmage)
-        localStorage.setItem("email", FbEmail)
-        localStorage.setItem("isLoggedIn", true)
-        this.setState({name: FbName, photo:FbImmage, isLoggedIn:true})
-        window.location = '/' 
-      }
-  
-      const responseGoogle = (response) => {
-  
-        console.log(response.profileObj);
-        const googleName = response.profileObj.name;
-        const googleImmage = response.profileObj.imageUrl;
-        const googleEmail = response.profileObj.email;
-        console.log(googleName);
-        localStorage.setItem("name", googleName)
-        localStorage.setItem("photo", googleImmage)
-        localStorage.setItem("email", googleEmail)
-        localStorage.setItem("isLoggedIn", true)
-        this.setState({name: googleName, photo:googleImmage, isLoggedIn:true})
-        window.location = '/' 
-      }
+    
       
-       const logout =(response) =>{
-        localStorage.removeItem("name")
-        localStorage.removeItem("photo")
-        localStorage.setItem("isLoggedIn")
-        this.setState({name: "", photo:"", isLoggedIn:false})
-        window.location = '/' 
-       }
-       localStorage.getItem("name")
-    return ( <Provider store={store}>
+      
+    return (
       <div>
         <a variant="outlined" color="blue" onClick={this.handleClickOpen}>
-        Log in
+        About
         </a>
         <Dialog
           onClose={this.handleClose}
@@ -163,55 +119,16 @@ class CustomizedDialogDemo extends React.Component {
           <DialogContent>
           
       
-      <div style={{paddingLeft:30,paddingTop:30}}>
-        <div id="googleButton" style={{}}></div>
-        <GoogleLogin
-
-        // for local host
-  // clientId= "919709182816-2hg84lnsgi74a4stbp4657ofr7a2keq9.apps.googleusercontent.com"
-
-    // for heroku
-    
-  clientId= "919709182816-ep64esfta7208lf1qmlcrl3aoiftjq63.apps.googleusercontent.com"
-  buttonText="Login with Google"
- 
-  onSuccess={responseGoogle}
-  onFailure={responseGoogle}
-  
-  cookiePolicy={'single_host_origin'}
- 
-
-
-/>
-
-</div>
-
-
-   
-
-
-
-<div style={{paddingTop:70, paddingBottom:0}}>
-<FacebookLogin
-    appId="374590499934008"
-    autoLoad={false}
-    fields="name,email,picture"
-    // onClick={componentClicked}
-    callback={responseFacebook}
-    //   cssClass="my-facebook-button-class"
-    // icon="fa-facebook"
-    
-    />
-
-
-</div>
-      
+     
 
             <Typography gutterBottom>
             
             </Typography>
             <Typography gutterBottom>
-         
+            {/* <h1 style={{color:"blue"}}>KASP INC.</h1> */}
+            <img  src={Logo} style={{height:150,width:150}} />
+            <h6>&copy;KASP INC. 2019</h6>
+            <a href = "mailto: ss100yan@gmail.com">Send Email</a>
             </Typography>
             <Typography gutterBottom>
             
@@ -227,7 +144,7 @@ class CustomizedDialogDemo extends React.Component {
         </Dialog>
         
       </div>
-      </Provider>
+      
     );
   }
 }

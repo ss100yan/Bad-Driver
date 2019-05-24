@@ -9,7 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
 import chat from "./chat.svg"
-import { Input, TextArea, FormBtn } from "../components/Form";
+import { Input, TextArea, FormBtn } from "./Form";
 import API from "../utils/API";
 import Icon from '@material-ui/core/Icon';
 import classNames from 'classnames';

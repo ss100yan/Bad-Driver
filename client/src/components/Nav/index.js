@@ -23,9 +23,10 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import { Home, ExitToApp, GetApp, SettingsPower,Info,Publish } from '@material-ui/icons';
 import user from "./user.svg"
-import  CustomizedDialogDemo from "../Dialog2"
-import  CustomizedDialogDemo3 from "../Dialog3"
-import  CustomizedDialogDemo2 from "../Dialog4"
+
+import  CustomizedDialogDemo from "../DialogLogin"
+import  CustomizedDialogDemo3 from "../DialogAbout"
+import  CustomizedDialogDemo2 from "../DialogAddNewVideo"
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 
   function handleClick(e) {
