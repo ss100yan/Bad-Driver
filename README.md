@@ -12,7 +12,7 @@
 
 ### *Publish dash-cam videos to enable safer driving in our community*
 
-![gif of app flow](https://github.com/ss100yan/Bad-Driver/blob/master/client/public/system%20design.jpg/)
+![screenshot](https://github.com/ss100yan/Bad-Driver/blob/master/client/public/KASP%20App%20Screen.jpg/)
 ![screenshot](https://github.com/ss100yan/Bad-Driver/blob/master/client/public/Mobile%20App%20Screenshot.jpg/)
 
 ## Team Members
