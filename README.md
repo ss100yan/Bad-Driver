@@ -13,6 +13,7 @@
 ### *Publish dash-cam videos to enable safer driving in our community*
 
 ![screenshot](https://github.com/ss100yan/Bad-Driver/blob/master/client/public/Project3.gif)
+![screenshot](https://github.com/ss100yan/Bad-Driver/blob/master/client/public/Mobile%20App%20Screenshot.jpg)
 
 
 ## Team Members
